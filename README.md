@@ -42,13 +42,13 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 | Skill | Pra que serve | Fonte |
 |---|---|---|
-| `react-expert` | Arquitetura React 18/19, hooks, Server Components, performance | comunidade |
-| `typescript-pro` | TypeScript avançado: generics, type-guards, type-safety full-stack | comunidade |
+| `react-expert` | Arquitetura React 18/19, hooks, Server Components, performance | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `typescript-pro` | TypeScript avançado: generics, type-guards, type-safety full-stack | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
 | `supabase` | Skill **oficial** do Supabase: Auth, Edge Functions, Realtime, Storage, RLS, migrations | [supabase/agent-skills](https://github.com/supabase/agent-skills) |
 | `supabase-postgres-best-practices` | Otimização de Postgres/Supabase: queries, schema, índices | [supabase](https://github.com/supabase/agent-skills) |
 | `capacitor-best-practices` | Boas práticas de Capacitor: estrutura, plugins, performance, deploy | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) |
 | `capacitor-plugins` | Instalar/configurar plugins Capacitor (câmera, push, RevenueCat…) | [capawesome-team/skills](https://github.com/capawesome-team/skills) |
-| `secure-code-guardian` | Segurança: auth, validação de input, OWASP Top 10, JWT/OAuth | comunidade |
+| `secure-code-guardian` | Segurança: auth, validação de input, OWASP Top 10, JWT/OAuth | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
 | `vercel-react-best-practices` | 70 regras de performance React/Next (Vercel Eng) | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) |
 | `stripe-best-practices` | Integração Stripe correta (Checkout, PaymentIntents, webhooks) | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
 | `webapp-testing` | Testar web app com Playwright (black-box) | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
@@ -60,13 +60,13 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 | Skill | Pra que serve | Fonte |
 |---|---|---|
-| `frontend-design` | Interfaces web bonitas e **não-genéricas** (foge do "cara de IA") | comunidade |
+| `frontend-design` | Interfaces web bonitas e **não-genéricas** (foge do "cara de IA") | [Anthropic](https://github.com/anthropics/skills) |
 | `impeccable` | **Auditor anti-AI-slop**: detecta "tells" de design gerado por IA + qualidade | [pbakaus](https://github.com/pbakaus) |
 | `huashu-design` | Design HTML-native: protótipos hi-fi, decks, animações, export MP4/GIF/PDF/PPTX | [alchaincyf](https://github.com/alchaincyf) |
-| `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | nextlevelbuilder |
+| `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
 | `logo-generator` | Logos SVG (geométricos) + showcase via Gemini | [op7418](https://github.com/op7418) |
-| `canvas-design` | Arte estática em `.png`/`.pdf` (posters, criativos) | comunidade |
-| `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | comunidade |
+| `canvas-design` | Arte estática em `.png`/`.pdf` (posters, criativos) | [Anthropic](https://github.com/anthropics/skills) |
+| `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | [Hardik Pandya](https://hvpandya.com) |
 
 ---
 
@@ -129,8 +129,8 @@ Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/c
 |---|---|---|
 | `last30days` | Pesquisa o que as pessoas **realmente falam** de um tópico nos últimos 30 dias (Reddit/X/YT/TikTok, ranqueado por engajamento) | [mvanhorn](https://github.com/mvanhorn) |
 | `prompt-master` | **Gerador** de prompt pronto-pra-colar, roteado por ferramenta-alvo (ChatGPT/Midjourney/Cursor…) | [nidhinjs](https://github.com/nidhinjs) |
-| `prompt-engineer` | Engenharia/avaliação de prompt (chain-of-thought, few-shot, structured output) | comunidade |
-| `skill-builder` | **Fábrica de skills**: transforma doc/repo/PDF/vídeo numa skill pronta (via MCP `skill-seekers`) | comunidade |
+| `prompt-engineer` | Engenharia/avaliação de prompt (chain-of-thought, few-shot, structured output) | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `skill-builder` | **Fábrica de skills**: transforma doc/repo/PDF/vídeo numa skill pronta (via MCP `skill-seekers`) | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) |
 | `find-skills` | Descobrir e instalar novas skills | skills.sh |
 
 ---
@@ -150,7 +150,11 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [capawesome-team/skills](https://github.com/capawesome-team/skills) | Plugins Capacitor | ver repo | `npx skills add capawesome-team/skills@capacitor-plugins` |
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | Integrações (fal, stripe, sentry, gsap, typefully…) | mistas | `npx skills add VoltAgent/awesome-agent-skills@<skill>` |
 | [makenotion/claude-code-notion-plugin](https://github.com/makenotion/claude-code-notion-plugin) | Skills do Notion | ver repo | ver repo |
-| nextlevelbuilder (ui-ux-pro-max) · [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) | Design, prompt, research | ver cada repo | via skills.sh |
+| [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) | Dev specialists (react-expert, typescript-pro, secure-code-guardian, prompt-engineer) | ver repo | `npx skills add jeffallan/claude-skills@<skill>` |
+| [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Suíte de UI/UX (não alucina interface) | ver repo | via skills.sh |
+| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Fábrica de skills (skill-builder / MCP) | ver repo | ver repo |
+| [Anthropic](https://github.com/anthropics/skills) | frontend-design, canvas-design (oficiais) | Apache 2.0 | vêm com o Claude Code |
+| [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
 > As licenças variam. Antes de usar comercialmente, cheque a licença no repositório de origem — em especial Remotion (não-MIT) e as integrações que exigem conta paga (fal, stripe, sentry).
 
