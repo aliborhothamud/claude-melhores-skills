@@ -71,36 +71,118 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 ---
 
 ## 📣 Marketing — pacote `coreyhaines31/marketingskills`
-27 skills de marketing de verdade (MIT, por [Corey Haines](https://github.com/coreyhaines31/marketingskills)). Conversão, copy, SEO, ads, growth, estratégia, vendas.
+27 skills de marketing de verdade (MIT, por [Corey Haines](https://github.com/coreyhaines31/marketingskills)).
 
-| Grupo | Skills |
+**🎯 Conversão & retenção**
+| Skill | O que faz |
 |---|---|
-| **Conversão** | `cro` · `onboarding` · `paywalls` |
-| **Copy & conteúdo** | `copywriting` · `social` · `image` · `content-strategy` · `emails` · `cold-email` |
-| **SEO** | `seo-audit` · `ai-seo` (ser citado por LLMs) · `schema` · `competitors` · `competitor-profiling` · `aso` |
-| **Ads & medição** | `ads` · `ad-creative` · `analytics` |
-| **Growth** | `referrals` · `community-marketing` |
-| **Estratégia** | `marketing-psychology` · `marketing-plan` · `offers` · `launch` · `customer-research` |
-| **Vendas** | `prospecting` · `sales-enablement` |
+| `cro` | Otimiza a conversão de uma página/formulário |
+| `onboarding` | Ativação pós-cadastro (aha moment, time-to-value) |
+| `paywalls` | Paywall, upsell e feature-gate dentro do app |
+
+**✍️ Copy & conteúdo**
+| Skill | O que faz |
+|---|---|
+| `copywriting` | Copy de páginas (home, landing, pricing) |
+| `social` | Conteúdo social (IG/TikTok/X/LinkedIn) + repurpose |
+| `image` | Imagens de marketing (heroes, social, mockups) |
+| `content-strategy` | Plano de conteúdo: tópicos e calendário |
+| `emails` | Sequências de e-mail (welcome, nurture, drip) |
+| `cold-email` | Cold email B2B + follow-ups |
+
+**🔎 SEO & descoberta**
+| Skill | O que faz |
+|---|---|
+| `seo-audit` | Auditoria de SEO técnico e on-page |
+| `ai-seo` | Ser citado por LLMs / aparecer no AI search (ChatGPT, Perplexity) |
+| `schema` | Schema markup / dados estruturados (rich snippets) |
+| `competitors` | Páginas "vs" / alternativa (comparação) |
+| `competitor-profiling` | Dossiê de concorrentes a partir da URL |
+| `aso` | Otimização de ficha na App Store / Play |
+
+**📣 Ads & 📊 medição**
+| Skill | O que faz |
+|---|---|
+| `ads` | Estratégia de campanha paga (Google/Meta/LinkedIn) |
+| `ad-creative` | Gera e itera criativos de anúncio em escala |
+| `analytics` | Setup e auditoria de tracking (GA4, eventos, UTM) |
+
+**🔁 Growth**
+| Skill | O que faz |
+|---|---|
+| `referrals` | Programa de indicação / afiliado / boca-a-boca |
+| `community-marketing` | Comunidade (Discord/grupo) como motor de growth |
+
+**🧠 Estratégia & 🤝 vendas**
+| Skill | O que faz |
+|---|---|
+| `marketing-psychology` | Gatilhos psicológicos e vieses (persuasão, social proof) |
+| `marketing-plan` | Plano de marketing completo (framework AARRR) |
+| `offers` | Desenha a oferta (garantia, bônus, urgência) |
+| `launch` | Plano de lançamento (Product Hunt, waitlist) |
+| `customer-research` | Pesquisa de cliente (ICP, JTBD, VOC, personas) |
+| `prospecting` | Monta lista de prospects (B2B / local) |
+| `sales-enablement` | Pitch decks, one-pager, tratamento de objeções |
 
 ---
 
 ## 📋 Produto & PM — pacote `phuryn/pm-skills`
-Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github.com/phuryn/pm-skills)). Execução + discovery + estratégia.
+Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github.com/phuryn/pm-skills)).
 
-| Grupo | Skills |
+**⚙️ Execução**
+| Skill | O que faz |
 |---|---|
-| **Execução** | `create-prd` · `sprint-plan` · `retro` · `brainstorm-okrs` · `outcome-roadmap` · `prioritization-frameworks` · `pre-mortem` · `stakeholder-map` |
-| **Discovery** | `opportunity-solution-tree` · `brainstorm-experiments-new` · `identify-assumptions-new` · `customer-journey-map` |
-| **Estratégia** | `lean-canvas` · `value-proposition` · `market-sizing` · `beachhead-segment` · `north-star-metric` · `growth-loops` · `product-name` |
-| **Análise & entrega** | `cohort-analysis` · `intended-vs-implemented` (audita spec vs. código) · `shipping-artifacts` · `privacy-policy` |
+| `create-prd` | PRD com template de 8 seções (problema → release) |
+| `sprint-plan` | Plano de sprint: capacidade, seleção, dependências, riscos |
+| `retro` | Retrospectiva estruturada com action items e donos |
+| `brainstorm-okrs` | OKRs de time alinhados à estratégia da empresa |
+| `outcome-roadmap` | Converte roadmap de outputs em outcomes |
+| `prioritization-frameworks` | 9 frameworks (RICE, ICE, Kano, MoSCoW…) com fórmulas |
+| `pre-mortem` | Análise de risco pré-launch (Tigers / Paper Tigers / Elephants) |
+| `stakeholder-map` | Grade poder × interesse + plano de comunicação |
+
+**🔍 Discovery**
+| Skill | O que faz |
+|---|---|
+| `opportunity-solution-tree` | OST (Teresa Torres): outcome → oportunidades → soluções |
+| `brainstorm-experiments-new` | Experimentos lean / pretotypes pra produto novo |
+| `identify-assumptions-new` | Mapeia premissas arriscadas (8 categorias) |
+| `customer-journey-map` | Jornada ponta-a-ponta: etapas, emoções, fricções |
+
+**🧭 Estratégia**
+| Skill | O que faz |
+|---|---|
+| `lean-canvas` | Lean Canvas completo (problema → receita) |
+| `value-proposition` | Proposta de valor em 6 partes (JTBD) |
+| `market-sizing` | TAM / SAM / SOM (top-down + bottom-up) |
+| `beachhead-segment` | Escolhe o 1º segmento de mercado a atacar |
+| `north-star-metric` | Define a North Star + métricas de input |
+| `growth-loops` | Desenha flywheels (viral, usage, UGC, referral) |
+| `product-name` | 5 nomes com rationale (naming/rebranding) |
+
+**📊 Análise & entrega**
+| Skill | O que faz |
+|---|---|
+| `cohort-analysis` | Retenção por coorte, adoção de feature, churn |
+| `intended-vs-implemented` | Audita o gap entre o que a spec diz e o que o código faz |
+| `shipping-artifacts` | Doc mínima pra um app AI-built ser revisável/auditável |
+| `privacy-policy` | Rascunho de política de privacidade (LGPD/GDPR) |
 
 ---
 
 ## 🎬 Vídeo — pacote `remotion-dev/skills`
 Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven.
 
-`remotion-create` · `remotion-markup` · `remotion-render` · `remotion-captions` · `remotion-best-practices` · `remotion-saas` · `remotion-interactivity` · `mediabunny`
+| Skill | O que faz |
+|---|---|
+| `remotion-best-practices` | Guarda-chuva — puxa as outras quando não se sabe qual usar |
+| `remotion-create` | Cria um projeto/composition de vídeo novo |
+| `remotion-markup` | Markup React pro vídeo (animação, layout, tipografia, áudio, timing) |
+| `remotion-render` | Renderiza em vídeo (MP4) ou frame (still) |
+| `remotion-captions` | Legendas/subtítulos animados (estilo Reels) |
+| `remotion-interactivity` | Deixa o vídeo editável/paramétrico no Studio |
+| `remotion-saas` | Arquitetura de apps/produtos com Remotion embutido |
+| `mediabunny` | Multimídia no browser (cortar, aparar, metadata de vídeo/áudio) |
 
 > ⚠️ Licença da Remotion é **não-MIT**: a lib pede licença comercial acima de ~3 pessoas. Ver termos antes de uso em produção.
 
@@ -119,7 +201,12 @@ Vídeo programático em React (8 skills, por [Remotion](https://github.com/remot
 ## 🗂️ Notion & produtividade — `makenotion`
 Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/claude-code-notion-plugin)) — trabalhar bem dentro do workspace.
 
-`notion-knowledge-capture` · `notion-meeting-intelligence` · `notion-research-documentation` · `notion-spec-to-implementation`
+| Skill | O que faz |
+|---|---|
+| `notion-knowledge-capture` | Transforma conversa/decisões em doc estruturada no Notion (com links) |
+| `notion-meeting-intelligence` | Prepara reunião: junta contexto + research → pre-read + agenda |
+| `notion-research-documentation` | Pesquisa no workspace e sintetiza em relatório com citações |
+| `notion-spec-to-implementation` | Converte spec em tasks/plano com acceptance criteria |
 
 ---
 
