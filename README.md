@@ -24,8 +24,19 @@ Cada seção abaixo linka a fonte. Comandos exatos das que têm slug próprio es
 
 ---
 
+## 🌐 Onde cada skill funciona
+
+O **mesmo arquivo** de skill roda em **Claude Code**, **Claude.ai (web/apps)** e **Cowork** — em qualquer um deles você liga *Code Execution + Skills* e sobe a pasta (ou aponta o repo Git da skill) em *Settings → Capabilities → Skills*. No Claude Code é nativo. *(Não existe "Claude Design" como produto — os ambientes são esses três + a API.)*
+
+Mas **rodar em todo lugar ≠ funcionar em todo lugar**. A coluna "Onde" nas tabelas usa:
+
+- 🟢 **Qualquer Claude** — instrução/conhecimento puro; funciona em Web, Code e Cowork
+- 🔧 **Precisa de ambiente** — depende de hook, MCP, dependências pesadas ou browser → **Claude Code / Cowork** (não no chat web simples)
+
+---
+
 ## 🧠 Processo & disciplina de trabalho — `superpowers`
-O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de codar, TDD, debugging sistemático, planos, verificação antes de dizer "pronto". Instala como **plugin**.
+O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de codar, TDD, debugging sistemático, planos, verificação antes de dizer "pronto". Instala como **plugin**. — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
 | Skill | Pra que serve |
 |---|---|
@@ -40,38 +51,38 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 ## 💻 Desenvolvimento
 
-| Skill | Pra que serve | Fonte |
-|---|---|---|
-| `react-expert` | Arquitetura React 18/19, hooks, Server Components, performance | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
-| `typescript-pro` | TypeScript avançado: generics, type-guards, type-safety full-stack | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
-| `supabase` | Skill **oficial** do Supabase: Auth, Edge Functions, Realtime, Storage, RLS, migrations | [supabase/agent-skills](https://github.com/supabase/agent-skills) |
-| `supabase-postgres-best-practices` | Otimização de Postgres/Supabase: queries, schema, índices | [supabase](https://github.com/supabase/agent-skills) |
-| `capacitor-best-practices` | Boas práticas de Capacitor: estrutura, plugins, performance, deploy | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) |
-| `capacitor-plugins` | Instalar/configurar plugins Capacitor (câmera, push, RevenueCat…) | [capawesome-team/skills](https://github.com/capawesome-team/skills) |
-| `secure-code-guardian` | Segurança: auth, validação de input, OWASP Top 10, JWT/OAuth | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
-| `vercel-react-best-practices` | 70 regras de performance React/Next (Vercel Eng) | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) |
-| `stripe-best-practices` | Integração Stripe correta (Checkout, PaymentIntents, webhooks) | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
-| `webapp-testing` | Testar web app com Playwright (black-box) | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
-| `sentry-react-sdk` / `sentry-fix-issues` | Setup do Sentry em React + corrigir erro de produção via MCP | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| Skill | Pra que serve | Onde | Fonte |
+|---|---|---|---|
+| `react-expert` | Arquitetura React 18/19, hooks, Server Components, performance | 🟢 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `typescript-pro` | TypeScript avançado: generics, type-guards, type-safety full-stack | 🟢 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `supabase` | Skill **oficial** do Supabase: Auth, Edge Functions, Realtime, Storage, RLS, migrations | 🟢 | [supabase/agent-skills](https://github.com/supabase/agent-skills) |
+| `supabase-postgres-best-practices` | Otimização de Postgres/Supabase: queries, schema, índices | 🟢 | [supabase](https://github.com/supabase/agent-skills) |
+| `capacitor-best-practices` | Boas práticas de Capacitor: estrutura, plugins, performance, deploy | 🟢 | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) |
+| `capacitor-plugins` | Instalar/configurar plugins Capacitor (câmera, push, RevenueCat…) | 🟢 | [capawesome-team/skills](https://github.com/capawesome-team/skills) |
+| `secure-code-guardian` | Segurança: auth, validação de input, OWASP Top 10, JWT/OAuth | 🟢 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `vercel-react-best-practices` | 70 regras de performance React/Next (Vercel Eng) | 🟢 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) |
+| `stripe-best-practices` | Integração Stripe correta (Checkout, PaymentIntents, webhooks) | 🟢 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| `webapp-testing` | Testar web app com Playwright (black-box) | 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| `sentry-react-sdk` / `sentry-fix-issues` | Setup do Sentry em React + corrigir erro de produção via MCP | 🟢 / 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
 
 ---
 
 ## 🎨 Design & UI
 
-| Skill | Pra que serve | Fonte |
-|---|---|---|
-| `frontend-design` | Interfaces web bonitas e **não-genéricas** (foge do "cara de IA") | [Anthropic](https://github.com/anthropics/skills) |
-| `impeccable` | **Auditor anti-AI-slop**: detecta "tells" de design gerado por IA + qualidade | [pbakaus](https://github.com/pbakaus) |
-| `huashu-design` | Design HTML-native: protótipos hi-fi, decks, animações, export MP4/GIF/PDF/PPTX | [alchaincyf](https://github.com/alchaincyf) |
-| `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
-| `logo-generator` | Logos SVG (geométricos) + showcase via Gemini | [op7418](https://github.com/op7418) |
-| `canvas-design` | Arte estática em `.png`/`.pdf` (posters, criativos) | [Anthropic](https://github.com/anthropics/skills) |
-| `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | [Hardik Pandya](https://hvpandya.com) |
+| Skill | Pra que serve | Onde | Fonte |
+|---|---|---|---|
+| `frontend-design` | Interfaces web bonitas e **não-genéricas** (foge do "cara de IA") | 🟢 | [Anthropic](https://github.com/anthropics/skills) |
+| `impeccable` | **Auditor anti-AI-slop**: detecta "tells" de design gerado por IA + qualidade | 🔧 | [pbakaus](https://github.com/pbakaus) |
+| `huashu-design` | Design HTML-native: protótipos hi-fi, decks, animações, export MP4/GIF/PDF/PPTX | 🔧 | [alchaincyf](https://github.com/alchaincyf) |
+| `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | 🟢 | [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+| `logo-generator` | Logos SVG (geométricos) + showcase via Gemini | 🔧 | [op7418](https://github.com/op7418) |
+| `canvas-design` | Arte estática em `.png`/`.pdf` (posters, criativos) | 🟢 | [Anthropic](https://github.com/anthropics/skills) |
+| `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | 🟢 | [Hardik Pandya](https://hvpandya.com) |
 
 ---
 
 ## 📣 Marketing — pacote `coreyhaines31/marketingskills`
-27 skills de marketing de verdade (MIT, por [Corey Haines](https://github.com/coreyhaines31/marketingskills)).
+27 skills de marketing de verdade (MIT, por [Corey Haines](https://github.com/coreyhaines31/marketingskills)). — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
 **🎯 Conversão & retenção**
 | Skill | O que faz |
@@ -127,7 +138,7 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 ---
 
 ## 📋 Produto & PM — pacote `phuryn/pm-skills`
-Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github.com/phuryn/pm-skills)).
+Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github.com/phuryn/pm-skills)). — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
 **⚙️ Execução**
 | Skill | O que faz |
@@ -171,7 +182,7 @@ Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github
 ---
 
 ## 🎬 Vídeo — pacote `remotion-dev/skills`
-Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven.
+Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven. — 🔧 **todas precisam de ambiente** (Node/render → Code / Cowork)
 
 | Skill | O que faz |
 |---|---|
@@ -190,16 +201,16 @@ Vídeo programático em React (8 skills, por [Remotion](https://github.com/remot
 
 ## 🔌 Integrações & mídia por IA
 
-| Skill | Pra que serve | Fonte |
-|---|---|---|
-| `genmedia` / `genmedia-workflow` | Gera imagem/vídeo por IA (fal.ai), com pipeline multi-etapa | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
-| `typefully` | Agendar/publicar em X · LinkedIn · Threads · Bluesky · Mastodon | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
-| `gsap-core` / `gsap-react` / `gsap-scrolltrigger` / `gsap-timeline` | Animação web com GSAP (GreenSock) | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| Skill | Pra que serve | Onde | Fonte |
+|---|---|---|---|
+| `genmedia` / `genmedia-workflow` | Gera imagem/vídeo por IA (fal.ai), com pipeline multi-etapa | 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| `typefully` | Agendar/publicar em X · LinkedIn · Threads · Bluesky · Mastodon | 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
+| `gsap-core` / `gsap-react` / `gsap-scrolltrigger` / `gsap-timeline` | Animação web com GSAP (GreenSock) | 🟢 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
 
 ---
 
 ## 🗂️ Notion & produtividade — `makenotion`
-Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/claude-code-notion-plugin)) — trabalhar bem dentro do workspace.
+Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/claude-code-notion-plugin)) — trabalhar bem dentro do workspace. 🔧 **precisam da conexão com o Notion** (MCP/conector).
 
 | Skill | O que faz |
 |---|---|
@@ -212,13 +223,13 @@ Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/c
 
 ## 🔎 Research & ✨ meta
 
-| Skill | Pra que serve | Fonte |
-|---|---|---|
-| `last30days` | Pesquisa o que as pessoas **realmente falam** de um tópico nos últimos 30 dias (Reddit/X/YT/TikTok, ranqueado por engajamento) | [mvanhorn](https://github.com/mvanhorn) |
-| `prompt-master` | **Gerador** de prompt pronto-pra-colar, roteado por ferramenta-alvo (ChatGPT/Midjourney/Cursor…) | [nidhinjs](https://github.com/nidhinjs) |
-| `prompt-engineer` | Engenharia/avaliação de prompt (chain-of-thought, few-shot, structured output) | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
-| `skill-builder` | **Fábrica de skills**: transforma doc/repo/PDF/vídeo numa skill pronta (via MCP `skill-seekers`) | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) |
-| `find-skills` | Descobrir e instalar novas skills | skills.sh |
+| Skill | Pra que serve | Onde | Fonte |
+|---|---|---|---|
+| `last30days` | Pesquisa o que as pessoas **realmente falam** de um tópico nos últimos 30 dias (Reddit/X/YT/TikTok, ranqueado por engajamento) | 🔧 | [mvanhorn](https://github.com/mvanhorn) |
+| `prompt-master` | **Gerador** de prompt pronto-pra-colar, roteado por ferramenta-alvo (ChatGPT/Midjourney/Cursor…) | 🟢 | [nidhinjs](https://github.com/nidhinjs) |
+| `prompt-engineer` | Engenharia/avaliação de prompt (chain-of-thought, few-shot, structured output) | 🟢 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) |
+| `skill-builder` | **Fábrica de skills**: transforma doc/repo/PDF/vídeo numa skill pronta (via MCP `skill-seekers`) | 🔧 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) |
+| `find-skills` | Descobrir e instalar novas skills | 🔧 | skills.sh |
 
 ---
 
