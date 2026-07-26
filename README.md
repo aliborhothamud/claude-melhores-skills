@@ -28,10 +28,24 @@ Cada seção abaixo linka a fonte. Comandos exatos das que têm slug próprio es
 
 O **mesmo arquivo** de skill roda em **Claude Code**, **Claude.ai (web/apps)** e **Cowork** — em qualquer um deles você liga *Code Execution + Skills* e sobe a pasta (ou aponta o repo Git da skill) em *Settings → Capabilities → Skills*. No Claude Code é nativo. *(Não existe "Claude Design" como produto — os ambientes são esses três + a API.)*
 
-Mas **rodar em todo lugar ≠ funcionar em todo lugar**. A coluna "Onde" nas tabelas usa:
+Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a skill precisa:
 
-- 🟢 **Qualquer Claude** — instrução/conhecimento puro; funciona em Web, Code e Cowork
-- 🔧 **Precisa de ambiente** — depende de hook, MCP, dependências pesadas ou browser → **Claude Code / Cowork** (não no chat web simples)
+| Tipo de skill | Claude Code | Claude.ai (Web) | Cowork |
+|---|:---:|:---:|:---:|
+| **Processo** (superpowers) | ✅ | ✅ | ✅ |
+| **Marketing** (27) · **Produto & PM** (23) | ✅ | ✅ | ✅ |
+| **Dev — conhecimento** (react-expert, typescript-pro, supabase, secure-code-guardian, capacitor…) | ✅ | ✅ | ✅ |
+| **Design — geração** (frontend-design, canvas-design, ui-ux-pro-max) | ✅ | ✅ | ✅ |
+| **Prompt** (prompt-master, prompt-engineer) · **GSAP** | ✅ | ✅ | ✅ |
+| **Design com hook/deps** (impeccable, huashu-design, logo-generator) | ✅ | ❌ | ⚠️ |
+| **Vídeo** (Remotion, 8) | ✅ | ❌ | ⚠️ |
+| **Browser/testes** (webapp-testing) | ✅ | ❌ | ⚠️ |
+| **Research local** (last30days) | ✅ | ❌ | ⚠️ |
+| **MCP-backed** (skill-builder, sentry-fix, Notion) | ✅¹ | ⚠️¹ | ✅¹ |
+
+✅ funciona · ❌ não roda · ⚠️ parcial/depende do ambiente · ¹ precisa do MCP/conector ligado
+
+Nas tabelas de cada seção, a coluna **"Onde"** resume isso por skill: 🟢 = qualquer Claude · 🔧 = precisa de ambiente (Code/Cowork).
 
 ---
 
