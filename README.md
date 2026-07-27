@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude Code](https://claude.com/claude-code)** — o que instalar, pra que serve e quando usar. Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
