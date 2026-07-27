@@ -7,7 +7,27 @@
 
 ---
 
-## 🚀 Como instalar uma skill
+## ⚡ Instalação rápida (a curadoria inteira, um comando)
+
+Clone o repo e rode o instalador — ele instala tudo **direto das fontes originais** (crédito intacto, versão sempre atual):
+
+```bash
+git clone https://github.com/aliborhothamud/claude-melhores-skills.git
+cd claude-melhores-skills
+bash instalar.sh          # Mac/Linux
+# Windows (PowerShell):   ./instalar.ps1
+```
+
+Depois, no Claude Code, adicione o plugin de processo:
+```
+/plugin marketplace add obra/superpowers
+```
+
+> Nada é rehospedado aqui — o script chama `npx skills add` pra cada fonte. As skills continuam sendo dos autores; você instala da mão deles.
+
+---
+
+## 🚀 Como instalar uma skill (individual)
 
 **Maioria das skills** (ecossistema [skills.sh](https://skills.sh)):
 ```bash
