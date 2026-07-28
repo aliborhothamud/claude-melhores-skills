@@ -255,6 +255,34 @@ Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/c
 
 ---
 
+## ⚖️ Legal & Compliance — `anthropics/claude-for-legal`
+Suíte **oficial da Anthropic** (8.9k⭐): **151 skills em 12 plugins** pra fluxos jurídicos e de compliance. Instala como **plugin** (funciona no Claude Code **e** no Cowork, mesma fonte). 🔧 é plugin — não é `npx skills add`.
+
+| Plugin | O que faz |
+|---|---|
+| `commercial-legal` | Revisa contratos de fornecedor/NDA/SaaS contra o playbook, rastreia renovações e prazos de cancelamento, roteia escalonamentos |
+| `corporate-legal` | Diligência de M&A em escala (revisão tabular citada), monta disclosure schedules e closing checklists, minutas de board, prazos societários |
+| `employment-legal` | Revisa contratações/demissões por risco jurisdicional, classifica trabalhadores, rastreia licenças, conduz investigações, redige políticas |
+| `privacy-legal` | Triagem de tratamento de dados, gera PIAs, revisa DPAs (controlador/operador), responde DSAR no prazo legal, monitora desvio de política |
+| `ip-legal` | Clearance de marca + freedom-to-operate, triagem de patenteabilidade, cease-and-desist e DMCA, compliance de open source, prazos de registro |
+| `litigation-legal` | Gerencia portfólio de litígios (prazos, holds, demandas), claim charts, cronologias, prep de depoimento, privilege logs, minutas de peças |
+| `regulatory-legal` | Vigia feeds regulatórios, faz diff de novas regras vs. sua política, rastreia prazos de comentário, escreve o digest de segunda |
+| `product-legal` | Revisa lançamentos contra sua calibragem de risco, "isso é problema?" em minutos, checa claims de marketing, sinaliza o que precisa de revisão |
+| `ai-governance-legal` | Triagem de casos de uso de IA contra seu registro, impact assessments, revisa termos de IA de fornecedores, mantém a política de IA atual |
+| `law-student` | Estuda direito: método socrático, briefing de casos, outlines, prep de prova/OAB, correção de IRAC, cronograma de estudo |
+| `legal-clinic` | Monta a clínica jurídica, onboarding de alunos, intake estruturado, rastreia prazos, handoff de casos (dentro da ABA Formal Op. 512) |
+| `legal-builder-hub` | Descobre, avalia e instala skills legais da comunidade — com gate de revisão de segurança antes de qualquer coisa entrar no ambiente |
+
+**Instalar** (Claude Code ou Cowork):
+```
+/plugin marketplace add anthropics/claude-for-legal
+```
+Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda nos dois ambientes (instale em cada um separadamente).
+
+> ⚠️ Não representa posições jurídicas da Anthropic — é ferramenta de apoio ao advogado, não parecer. O profissional é responsável pelas posições tomadas.
+
+---
+
 ## 🔎 Research & ✨ meta
 
 | Skill | Pra que serve | Onde | Fonte |
@@ -286,6 +314,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Suíte de UI/UX (não alucina interface) | ver repo | via skills.sh |
 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Fábrica de skills (skill-builder / MCP) | ver repo | ver repo |
 | [Anthropic](https://github.com/anthropics/skills) | frontend-design, canvas-design (oficiais) | Apache 2.0 | vêm com o Claude Code |
+| [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
 | [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
 > As licenças variam. Antes de usar comercialmente, cheque a licença no repositório de origem — em especial Remotion (não-MIT) e as integrações que exigem conta paga (fal, stripe, sentry).
