@@ -126,6 +126,7 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 |---|---|---|---|---|
 | `frontend-design` | Interfaces web bonitas e **não-genéricas** (foge do "cara de IA") | construir ou estilizar qualquer UI web | 🟢 | [Anthropic](https://github.com/anthropics/skills) |
 | `impeccable` | **Auditor anti-AI-slop**: detecta "tells" de design gerado por IA + qualidade | auditar qualidade de uma tela | 🔧 | [pbakaus](https://github.com/pbakaus) |
+| `web-design-guidelines` | **Auditora de acessibilidade & conformidade**: revisa código de UI contra 100+ regras (aria, HTML semântico, foco, teclado, forms, dark mode, i18n) | design já bom → garantir que é acessível e não constrange quem usa teclado/leitor de tela; QA antes de subir | 🟢 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) |
 | `huashu-design` | Design HTML-native: protótipos hi-fi, decks, animações, export MP4/GIF/PDF/PPTX | protótipo, deck, animação, export MP4 | 🔧 | [alchaincyf](https://github.com/alchaincyf) |
 | `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | escolher estilo/paleta ou planejar UI | 🟢 | [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
 | `logo-generator` | Logos SVG (geométricos) + showcase via Gemini | gerar logo e variações de marca | 🔧 | [op7418](https://github.com/op7418) |
@@ -345,6 +346,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) | Capacitor best practices | ver repo | `npx skills add cap-go/capacitor-skills@capacitor-best-practices` |
 | [capawesome-team/skills](https://github.com/capawesome-team/skills) | Plugins Capacitor | ver repo | `npx skills add capawesome-team/skills@capacitor-plugins` |
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | Integrações (fal, stripe, sentry, gsap, typefully…) | mistas | `npx skills add VoltAgent/awesome-agent-skills@<skill>` |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Auditoras de UI/eng (web-design-guidelines, react-best-practices…) | MIT | `npx skills add vercel-labs/agent-skills` |
 | [makenotion/claude-code-notion-plugin](https://github.com/makenotion/claude-code-notion-plugin) | Skills do Notion | ver repo | ver repo |
 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) | Dev specialists (react-expert, typescript-pro, secure-code-guardian, prompt-engineer) | ver repo | `npx skills add jeffallan/claude-skills@<skill>` |
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Suíte de UI/UX (não alucina interface) | ver repo | via skills.sh |
