@@ -102,6 +102,24 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 ---
 
+## ⚙️ Fluxo de engenharia — pacote `mattpocock/skills`
+
+Workflows de dev disciplinados, por [Matt Pocock](https://github.com/mattpocock/skills) (Total TypeScript). MIT. — 🔧 **todas precisam do Claude Code** (repo/filesystem/gh/agentes em background).
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `to-spec` | Conversa atual → spec publicada no issue tracker, sem entrevista | fechar uma discussão de feature em spec | 🔧 | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| `prototype` | Protótipo descartável: app de terminal (lógica/estado) ou variações de UI numa rota | validar design antes de construir | 🔧 | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| `diagnosing-bugs` | Loop reproduzir→minimizar→hipotetizar→instrumentar→corrigir→regressão | bug difícil, regressão de performance | 🔧 | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| `research` | Pesquisa em fontes primárias → Markdown citado no repo (agente em background) | verificar fatos de docs/API | 🔧 | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| `teach` | Ensino multi-sessão com workspace de aprendizado com estado | aprender um conceito com acompanhamento | 🔧 | [mattpocock/skills](https://github.com/mattpocock/skills) |
+
+```bash
+npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagnosing-bugs --skill research --skill teach -g
+```
+
+---
+
 ## 🎨 Design & UI
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -321,6 +339,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [obra/superpowers](https://github.com/obra/superpowers) | Processo (brainstorming, TDD, debugging, planos) | ver repo | `/plugin marketplace add` |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 27 skills de marketing | MIT | `npx skills add coreyhaines31/marketingskills@<skill>` |
 | [phuryn/pm-skills](https://github.com/phuryn/pm-skills) | Metodologia de produto/PM | MIT | `npx skills add phuryn/pm-skills@<skill>` |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | Fluxo de engenharia (to-spec, prototype, diagnosing-bugs, research, teach) | MIT | `npx skills add mattpocock/skills --skill <skill> -g` |
 | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Vídeo em React | Remotion (não-MIT) | `npx skills add remotion-dev/skills@<skill>` |
 | [supabase/agent-skills](https://github.com/supabase/agent-skills) | Supabase oficial | ver repo | `npx skills add supabase/agent-skills@supabase` |
 | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) | Capacitor best practices | ver repo | `npx skills add cap-go/capacitor-skills@capacitor-best-practices` |
