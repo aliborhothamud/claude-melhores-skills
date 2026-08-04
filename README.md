@@ -322,12 +322,15 @@ Skills escritas por mim, publicadas **aqui mesmo** — copie a pasta pro seu `~/
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
 | [`lighthouse-95`](skills/lighthouse-95/SKILL.md) | Levar um site a **95+ em todas as categorias do Lighthouse** (mobile E desktop): loop medir→identificar a causa exata no JSON→corrigir→re-medir, playbook de fixes (font instancing/subsetting, LCP, TBT, CSS crítico, a11y) e armadilhas que custam rounds (deploy stale, preload guloso, variância) | site com nota baixa no Lighthouse, FCP/LCP/TBT/CLS ruins | 🔧 | este repo |
-| [`design-por-referencia`](skills/design-por-referencia/SKILL.md) | **Método anti-vibe-coding pra landings de nível agência**: referências premiadas screenshotadas por seção → prancheta de fotos → 2-3 direções com animação-assinatura → estrutura de landing comprovada → gates de qualidade. O dono só vota e aprova | landing/site "com cara de IA", redesign premium, construir landing a partir de um site de referência | 🔧 | este repo |
+| [`design-por-referencia`](skills/design-por-referencia/SKILL.md) | **Método anti-vibe-coding pra landings de nível agência**: referências premiadas screenshotadas por seção → prancheta de fotos → 2-3 direções com animação-assinatura → estrutura de landing comprovada → gates de qualidade. O dono só vota e aprova | landing/site "com cara de IA", redesign premium, construir landing a partir de um site de referência | 🔧 | [aliborhothamud/design-por-referencia-skill](https://github.com/aliborhothamud/design-por-referencia-skill) ⭐ AUTORAL, MIT |
 
 ```bash
 # instalar a lighthouse-95:
 mkdir -p ~/.claude/skills/lighthouse-95
 curl -o ~/.claude/skills/lighthouse-95/SKILL.md https://raw.githubusercontent.com/aliborhothamud/claude-melhores-skills/master/skills/lighthouse-95/SKILL.md
+
+# instalar a design-por-referencia (repo próprio):
+npx skills add aliborhothamud/design-por-referencia-skill -g
 ```
 
 ---
