@@ -1,9 +1,31 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~185 skills curadas em 13 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
+
+---
+
+## 🗺️ O que tem aqui (pula pro que te interessa)
+
+| Grupo | Skills | Pra quem |
+|---|--:|---|
+| 🧠 [Processo & disciplina](#grp-processo) | 6 | deixar o Claude Code mais confiável (TDD, debugging, planos) |
+| 💻 [Desenvolvimento](#grp-dev) | 12 | dev React/TS/Supabase/Capacitor + segurança + performance |
+| ⚙️ [Fluxo de engenharia](#grp-fluxo) | 5 | workflows de dev disciplinados (spec, protótipo, debug) |
+| 🎨 [Design & UI](#grp-design) | 8 | interface, protótipo, auditoria visual e de acessibilidade |
+| 📣 [Marketing](#grp-marketing) | 27 | growth, copy, SEO, ads, lançamento, vendas |
+| 📋 [Produto & PM](#grp-produto) | 23 | PRD, discovery, estratégia, métricas, priorização |
+| 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
+| 🎬 [Vídeo](#grp-video) | 8 | Reels/ads programáticos em React (Remotion) |
+| 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
+| 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
+| ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
+| 🔎 [Research & meta](#grp-research) | 5 | pesquisa, prompt, fábrica de skills |
+| ✨ [Autorais](#grp-autorais) | 2 | ⭐ escritas por mim, publicadas aqui |
+
+> **Onde funciona:** 🟢 = qualquer Claude (Code · Web · Cowork) · 🔧 = precisa de ambiente (Code/Cowork). Detalhe na [matriz de compatibilidade](#-onde-cada-skill-funciona).
 
 ---
 
@@ -69,6 +91,7 @@ Nas tabelas de cada seção, a coluna **"Onde"** resume isso por skill: 🟢 = q
 
 ---
 
+<a id="grp-processo"></a>
 ## 🧠 Processo & disciplina de trabalho — `superpowers`
 O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de codar, TDD, debugging sistemático, planos, verificação antes de dizer "pronto". Instala como **plugin**. — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
@@ -83,6 +106,7 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 ---
 
+<a id="grp-dev"></a>
 ## 💻 Desenvolvimento
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -102,6 +126,7 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 
 ---
 
+<a id="grp-fluxo"></a>
 ## ⚙️ Fluxo de engenharia — pacote `mattpocock/skills`
 
 Workflows de dev disciplinados, por [Matt Pocock](https://github.com/mattpocock/skills) (Total TypeScript). MIT. — 🔧 **todas precisam do Claude Code** (repo/filesystem/gh/agentes em background).
@@ -120,6 +145,7 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 
 ---
 
+<a id="grp-design"></a>
 ## 🎨 Design & UI
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -135,6 +161,7 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 
 ---
 
+<a id="grp-marketing"></a>
 ## 📣 Marketing — pacote `coreyhaines31/marketingskills`
 27 skills de marketing de verdade (MIT, por [Corey Haines](https://github.com/coreyhaines31/marketingskills)). — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
@@ -191,6 +218,7 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 
 ---
 
+<a id="grp-produto"></a>
 ## 📋 Produto & PM — pacote `phuryn/pm-skills`
 Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github.com/phuryn/pm-skills)). — 🟢 **todas instrução pura** (rodam em qualquer Claude)
 
@@ -235,6 +263,28 @@ Metodologia de produto (MIT, por [Paweł Huryn / Product Compass](https://github
 
 ---
 
+<a id="grp-produtividade"></a>
+## 🧠 Produtividade de founder — pacote `alirezarezvani/claude-skills`
+
+Núcleo de produtividade solo garimpado de um mega-repo (MIT, por [Alireza Rezvani](https://github.com/alirezarezvani/claude-skills)). — 🔧 **todas têm scripts Python, mas stdlib-only (zero `pip install`)** — rodam no Claude Code e portam bem.
+
+| Skill | O que faz | Quando usar |
+|---|---|---|
+| `capture` | Brain-dump caótico → sistema acionável (Projetos/Ideias · Tarefas · Conexões) sem perder nada | despejar um monte de ideias soltas de uma vez |
+| `weekly-review` | Weekly review GTD (David Allen): fecha loops, audita projetos parados, pontua compromissos 0-100 | rodar a revisão semanal, voltar ao sistema confiável |
+| `deep-work` | Planeja dia de foco + time-blocking energy-first, teto de 4h de trabalho profundo, log de sessões | planejar horas de foco, proteger o deep work |
+| `roast` | Painel adversarial de 5 ângulos destrói uma ideia → veredito GO/RESHAPE/KILL + teste mais barato | estressar/validar uma ideia antes de construir |
+| `meetings` | Gate anti-reunião: precifica em $ (ASYNC/NOT-READY/MEET), agenda decision-first, action items com dono | decidir se a reunião vale, transformar notas em tarefas |
+| `reflect` | Zoom-out no meio da conversa: reavalia direção, premissas e viés em 5 dimensões | "dá um passo atrás", sanity check, sair do modo-detalhe |
+| `handoff` | Compacta a conversa num doc de handoff (redige segredos) pra outro agente/sessão pegar | trocar de máquina, encerrar o dia no meio da tarefa |
+
+```bash
+npx skills add alirezarezvani/claude-skills
+```
+
+---
+
+<a id="grp-video"></a>
 ## 🎬 Vídeo — pacote `remotion-dev/skills`
 Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven. — 🔧 **todas precisam de ambiente** (Node/render → Code / Cowork)
 
@@ -253,6 +303,7 @@ Vídeo programático em React (8 skills, por [Remotion](https://github.com/remot
 
 ---
 
+<a id="grp-integracoes"></a>
 ## 🔌 Integrações & mídia por IA
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -263,6 +314,7 @@ Vídeo programático em React (8 skills, por [Remotion](https://github.com/remot
 
 ---
 
+<a id="grp-notion"></a>
 ## 🗂️ Notion & produtividade — `makenotion`
 Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/claude-code-notion-plugin)) — trabalhar bem dentro do workspace. 🔧 **precisam da conexão com o Notion** (MCP/conector).
 
@@ -275,6 +327,7 @@ Skills oficiais do Notion Cookbook ([makenotion](https://github.com/makenotion/c
 
 ---
 
+<a id="grp-legal"></a>
 ## ⚖️ Legal & Compliance — `anthropics/claude-for-legal`
 Suíte **oficial da Anthropic** (8.9k⭐): **151 skills em 12 plugins** pra fluxos jurídicos e de compliance. Instala como **plugin** (funciona no Claude Code **e** no Cowork, mesma fonte). 🔧 é plugin — não é `npx skills add`.
 
@@ -303,6 +356,7 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 
 ---
 
+<a id="grp-research"></a>
 ## 🔎 Research & ✨ meta
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -315,6 +369,7 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 
 ---
 
+<a id="grp-autorais"></a>
 ## ✨ Autorais (deste catálogo)
 
 Skills escritas por mim, publicadas **aqui mesmo** — copie a pasta pro seu `~/.claude/skills/` (ou suba o `SKILL.md` no claude.ai web).
@@ -351,6 +406,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [capawesome-team/skills](https://github.com/capawesome-team/skills) | Plugins Capacitor | ver repo | `npx skills add capawesome-team/skills@capacitor-plugins` |
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | Integrações (fal, stripe, sentry, gsap, typefully…) | mistas | `npx skills add VoltAgent/awesome-agent-skills@<skill>` |
 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Auditoras de UI/eng (web-design-guidelines, react-best-practices…) | MIT | `npx skills add vercel-labs/agent-skills` |
+| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | Produtividade de founder (capture, weekly-review, deep-work, roast, meetings, reflect, handoff) | MIT | `npx skills add alirezarezvani/claude-skills` |
 | [makenotion/claude-code-notion-plugin](https://github.com/makenotion/claude-code-notion-plugin) | Skills do Notion | ver repo | ver repo |
 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) | Dev specialists (react-expert, typescript-pro, secure-code-guardian, prompt-engineer) | ver repo | `npx skills add jeffallan/claude-skills@<skill>` |
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Suíte de UI/UX (não alucina interface) | ver repo | via skills.sh |
