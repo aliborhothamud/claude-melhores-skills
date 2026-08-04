@@ -296,6 +296,22 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 
 ---
 
+## ✨ Autorais (deste catálogo)
+
+Skills escritas por mim, publicadas **aqui mesmo** — copie a pasta pro seu `~/.claude/skills/` (ou suba o `SKILL.md` no claude.ai web).
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| [`lighthouse-95`](skills/lighthouse-95/SKILL.md) | Levar um site a **95+ em todas as categorias do Lighthouse** (mobile E desktop): loop medir→identificar a causa exata no JSON→corrigir→re-medir, playbook de fixes (font instancing/subsetting, LCP, TBT, CSS crítico, a11y) e armadilhas que custam rounds (deploy stale, preload guloso, variância) | site com nota baixa no Lighthouse, FCP/LCP/TBT/CLS ruins | 🔧 | este repo |
+
+```bash
+# instalar a lighthouse-95:
+mkdir -p ~/.claude/skills/lighthouse-95
+curl -o ~/.claude/skills/lighthouse-95/SKILL.md https://raw.githubusercontent.com/aliborhothamud/claude-melhores-skills/master/skills/lighthouse-95/SKILL.md
+```
+
+---
+
 ## 🙏 Fontes & créditos
 
 Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recomenda. Instale da fonte e respeite a licença de cada uma.
