@@ -18,6 +18,7 @@
 | 📣 [Marketing](#grp-marketing) | 27 | growth, copy, SEO, ads, lançamento, vendas |
 | 📋 [Produto & PM](#grp-produto) | 23 | PRD, discovery, estratégia, métricas, priorização |
 | 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
+| 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
 | 🎬 [Vídeo](#grp-video) | 8 | Reels/ads programáticos em React (Remotion) |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
@@ -83,6 +84,8 @@ Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a ski
 | **Vídeo** (Remotion, 8) | ✅ | ❌ | ⚠️ |
 | **Browser/testes** (webapp-testing) | ✅ | ❌ | ⚠️ |
 | **Research local** (last30days) | ✅ | ❌ | ⚠️ |
+| **Economia de token — instrução pura** (caveman, help, commit, review) | ✅ | ✅ | ✅ |
+| **Economia de token — com hook/script/subagente** (compress, cavecrew, stats) | ✅ | ❌ | ⚠️ |
 | **MCP-backed** (skill-builder, sentry-fix, Notion) | ✅¹ | ⚠️¹ | ✅¹ |
 
 ✅ funciona · ❌ não roda · ⚠️ parcial/depende do ambiente · ¹ precisa do MCP/conector ligado
@@ -284,6 +287,33 @@ npx skills add alirezarezvani/claude-skills
 
 ---
 
+<a id="grp-tokens"></a>
+## 🦴 Economia de tokens — pacote `JuliusBrussee/caveman`
+
+Faz o agente responder em "caveman speak": corta artigo, filler e pleonasmo, mantendo 100% da substância técnica — código, comandos, nomes de API, mensagens de erro e números ficam **verbatim** (MIT, por [Julius Brussee](https://github.com/JuliusBrussee/caveman)). O autor mede −65% de tokens de output em prosa e −8,5% numa run agêntica completa, e publica um `docs/HONEST-NUMBERS.md` com os casos em que o modo **não** compensa. Preserva o idioma de quem escreve — se você escreve em PT, ele responde em PT.
+
+| Skill | O que faz | Quando usar | Onde |
+|---|---|---|:-:|
+| `caveman` | O núcleo: 6 níveis de compressão (`lite` · `full` · `ultra` + `wenyan-*`, chinês clássico). Desliga sozinho em aviso de segurança, confirmação de ação irreversível e sequência multi-passo que ficaria ambígua comprimida | sessão longa comendo contexto, cortar custo de output, "seja breve" | 🟢 |
+| `caveman-help` | Cartão de referência dos modos e comandos. One-shot, não persiste nada | esqueceu qual nível faz o quê | 🟢 |
+| `caveman-commit` | Commit em Conventional Commits: assunto ≤50 chars, imperativo, corpo só quando o "porquê" não é óbvio | gerar mensagem de commit | 🟢 |
+| `caveman-review` | Code review de uma linha por achado — `L<linha>: problema. fix.` — com severidade 🔴 bug · 🟡 risco · 🔵 nit · ❓ dúvida | revisar PR/diff sem enrolação | 🟢 |
+| `caveman-compress` | Comprime arquivos de **memória** (CLAUDE.md, todos, preferências) pra economizar token de *input* — o resto do pacote economiza *output*. Backup legível fica fora da árvore do projeto | CLAUDE.md engordando a cada sessão | 🔧 |
+| `cavecrew` | Três subagentes que devolvem output comprimido (achar código · editar 1-2 arquivos · revisar diff): o tool-result que volta pro contexto principal fica ~60% menor | delegar sem estourar o contexto | 🔧 |
+| `caveman-stats` | Tokens reais da sessão e economia estimada, lidos do log do Claude Code — inclui o custo das regras injetadas e o saldo líquido | conferir se está de fato valendo a pena | 🔧 |
+
+```bash
+# tudo: detecta seus agentes e instala plugin + hooks + statusline
+npx -y github:JuliusBrussee/caveman
+
+# só o plugin do Claude Code, sem hooks
+claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman
+```
+
+> ⚠️ **Repare que os hooks ligam o modo sozinho.** A instalação completa adiciona um hook de `SessionStart` que ativa o nível `full` em toda sessão e todo projeto, e um de `UserPromptSubmit` que reinjeta as regras a cada turno (~1.250 tokens de *input* por turno, pela conta do próprio autor). Em sessão de respostas curtas isso fica **net-negativo** — e, pra crédito dele, o `/caveman-stats` fala isso na sua cara em vez de esconder atrás do número bruto de economia. Se você prefere opt-in, instale com `--minimal` e chame `/caveman` só quando quiser.
+
+---
+
 <a id="grp-video"></a>
 ## 🎬 Vídeo — pacote `remotion-dev/skills`
 Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven. — 🔧 **todas precisam de ambiente** (Node/render → Code / Cowork)
@@ -407,6 +437,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | Integrações (fal, stripe, sentry, gsap, typefully…) | mistas | `npx skills add VoltAgent/awesome-agent-skills@<skill>` |
 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Auditoras de UI/eng (web-design-guidelines, react-best-practices…) | MIT | `npx skills add vercel-labs/agent-skills` |
 | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | Produtividade de founder (capture, weekly-review, deep-work, roast, meetings, reflect, handoff) | MIT | `npx skills add alirezarezvani/claude-skills` |
+| [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Economia de token (caveman, commit, review, compress, cavecrew, stats) | MIT | `npx -y github:JuliusBrussee/caveman` |
 | [makenotion/claude-code-notion-plugin](https://github.com/makenotion/claude-code-notion-plugin) | Skills do Notion | ver repo | ver repo |
 | [jeffallan/claude-skills](https://github.com/jeffallan/claude-skills) | Dev specialists (react-expert, typescript-pro, secure-code-guardian, prompt-engineer) | ver repo | `npx skills add jeffallan/claude-skills@<skill>` |
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Suíte de UI/UX (não alucina interface) | ver repo | via skills.sh |
