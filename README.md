@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~197 skills curadas em 13 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~230 skills curadas em 16 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -12,17 +12,20 @@
 | Grupo | Skills | Pra quem |
 |---|--:|---|
 | 🧠 [Processo & disciplina](#grp-processo) | 6 | deixar o Claude Code mais confiável (TDD, debugging, planos) |
-| 💻 [Desenvolvimento](#grp-dev) | 12 | dev React/TS/Supabase/Capacitor + segurança + performance |
+| 💻 [Desenvolvimento](#grp-dev) | 13 | dev React/TS/Supabase/Capacitor + segurança + performance |
 | ⚙️ [Fluxo de engenharia](#grp-fluxo) | 5 | workflows de dev disciplinados (spec, protótipo, debug) |
-| 🎨 [Design & UI](#grp-design) | 8 | interface, protótipo, auditoria visual e de acessibilidade |
+| 🎨 [Design & UI](#grp-design) | 11 | interface, protótipo, auditoria visual e de acessibilidade |
+| 🎞️ [Motion & animação](#grp-motion) | 13 | fazer a interface se mexer com critério (web e React Native) |
+| 🎨 [Taste & direções de estilo](#grp-taste) | 6 | injetar uma estética **antes** de construir, não auditar depois |
 | 📣 [Marketing](#grp-marketing) | 27 | growth, copy, SEO, ads, lançamento, vendas |
 | 📋 [Produto & PM](#grp-produto) | 23 | PRD, discovery, estratégia, métricas, priorização |
 | 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
 | 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
-| 🎬 [Vídeo](#grp-video) | 20 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
+| 🎬 [Vídeo](#grp-video) | 22 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
+| 🔍 [Auditoria & higiene](#grp-auditoria) | 7 | achar o bug antes do usuário — e manter o próprio setup enxuto |
 | 🔎 [Research & meta](#grp-research) | 5 | pesquisa, prompt, fábrica de skills |
 | ✨ [Autorais](#grp-autorais) | 2 | ⭐ escritas por mim, publicadas aqui |
 
@@ -130,6 +133,8 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 ---
 
 <a id="grp-fluxo"></a>
+> 💡 **Vite:** `vite-patterns` — config, plugins, HMR, variável de ambiente, proxy, SSR, modo biblioteca e otimização de build. Dispara ao mexer em `vite.config` ou quando o build fica lento/quebrado. 🟢 · [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT).
+
 ## ⚙️ Fluxo de engenharia — pacote `mattpocock/skills`
 
 Workflows de dev disciplinados, por [Matt Pocock](https://github.com/mattpocock/skills) (Total TypeScript). MIT. — 🔧 **todas precisam do Claude Code** (repo/filesystem/gh/agentes em background).
@@ -160,7 +165,59 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 | `ui-ux-pro-max` **(+6)** | Suíte que **não alucina UI**: 84 estilos, 161 paletas, 99 regras de UX, tokens, slides, banners | escolher estilo/paleta ou planejar UI | 🟢 | [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
 | `logo-generator` | Logos SVG (geométricos) + showcase via Gemini | gerar logo e variações de marca | 🔧 | [op7418](https://github.com/op7418) |
 | `canvas-design` | Arte estática em `.png`/`.pdf` (posters, criativos) | pedir poster ou arte estática | 🟢 | [Anthropic](https://github.com/anthropics/skills) |
+| `svg-design` | **Desenha logo e ícone direto em SVG** (sem gerar raster e sem API key): path, fill-rule, gradiente, máscara, ARIA, otimização — com 8 referências carregadas sob demanda | gerar ou editar logo/ícone vetorial; marca que precisa ser legível a 16px | 🟢 | [tryopendata/skills](https://github.com/tryopendata/skills) |
+| `frontend-slides` | Deck HTML animado do zero **ou convertendo PPT/PPTX** pra web | converter apresentação existente, deck de talk com animação | 🔧 | [zarazhangrui](https://github.com/zarazhangrui/frontend-slides) |
+| `design-lab` | Entrevista você, gera **5 variações distintas** de UI num lab temporário e devolve plano de implementação | explorar opções de design, comparar abordagens antes de escolher | 🟢 | [0xdesign](https://github.com/0xdesign/design-plugin) ⚠️ *sem licença declarada* |
 | `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | escrever, editar ou revisar texto | 🟢 | [Hardik Pandya](https://hvpandya.com) |
+
+---
+
+<a id="grp-motion"></a>
+## 🎞️ Motion & animação
+
+**13 skills** pra fazer a interface se mexer com critério — 10 de [Emil Kowalski](https://github.com/emilkowalski/skills) (autor do **Sonner** e do **Vaul**, MIT) e 3 de [Raphael Salaja](https://github.com/raphaelsalaja/skill). — 🟢 **todas instrução pura** (rodam em qualquer Claude)
+
+> ⚠️ **Este é o grupo com mais risco de rota ambígua do catálogo.** São muitas skills plausíveis pro mesmo pedido "anima essa UI". Use a régua da última coluna pra escolher — e se você já tem `gsap-*` ou o `impeccable` instalados, saiba que eles também disputam essa faixa.
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `animate` | **O construtor (web).** Decide na ordem que importa: deve animar? qual propósito? ferramenta mais barata, propriedades, curva e duração, como interrompe e como sai — e escreve o código já com `prefers-reduced-motion`. Às vezes devolve **zero linha** | construir animação ou micro-interação **na web** | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `animate-expo` | **O construtor (React Native / Expo).** Decide em que thread roda, quais propriedades não re-disparam layout, spring × timing, como o gesto entrega velocidade e como degrada em aparelho fraco. Escreve com Reanimated, Gesture Handler, Expo Router e expo-haptics | animar em app Expo: sheet, swipe, transição de rota, háptico, "trava no celular" | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `apple-design` | O jeito Apple de interface e **movimento físico** traduzido pra web: spring, gesto, drag/swipe/sheet, momentum, transição interrompível, material translúcido, tipografia ótica | UI dirigida a gesto, spring, bottom-sheet, "quero que pareça iOS" | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `emil-design-eng` | A **filosofia** por trás do polimento: design de componente, decisão de animação e os detalhes invisíveis que fazem software parecer bom | construir ou revisar UI com barra alta de acabamento | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `review-animations` | **Code review de animação** contra uma barra alta de craft — sinaliza por padrão, não elogia | revisar **um diff** que mexeu em motion | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `improve-animations` | Audita **a base inteira** de motion como consultor sênior e devolve plano priorizado pra outro agente executar. Read-only | querer roadmap de motion, não review de um diff | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `find-animation-opportunities` | Varre a UI atrás do que **não anima e deveria** — e rejeita o que não deve animar. Propõe com valores exatos, sem implementar | "o que dá pra animar aqui?", "deixa isso mais vivo" | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `animation-vocabulary` | **Glossário reverso**: descrição vaga vira o termo exato ("aquele efeito elástico do scroll do iOS" → *rubber-banding*) | não saber o nome do efeito pra pedir ou promptar | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `pick-ui-library` | Escolhe a lib certa pra tarefa de frontend numa lista curada e opinativa (números, OTP, gráfico, command menu, virtual list) | "qual biblioteca eu uso pra X?" | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `ask-sonner` | Guia do **Sonner** (lib de toast): ligar o Toaster, escolher o `toast()` certo, promise e loading, atualizar, dispensar, estilizar, tema, posição | toast que não aparece, aparece duas vezes, perde o estilo ou fica atrás do modal | 🟢 | [emilkowalski](https://github.com/emilkowalski/skills) |
+| `12-principles-of-animation` | Audita movimento contra os **12 princípios da Disney** adaptados pra web; devolve achados em `arquivo:linha` | conferir se o movimento parece natural e orgânico | 🟢 | [raphaelsalaja](https://github.com/raphaelsalaja/skill) ⚠️ *sem licença declarada* |
+| `mastering-animate-presence` | Audita código **Motion/Framer Motion** contra as boas práticas de `AnimatePresence` | animação de **saída** não roda, modal some sem transição | 🟢 | [raphaelsalaja](https://github.com/raphaelsalaja/skill) ⚠️ *sem licença declarada* |
+| `pseudo-elements` | Audita CSS de **pseudo-elementos** (`::before`/`::after`/`::backdrop`) e o uso da **View Transitions API** | efeito de hover, camada decorativa, transição de página | 🟢 | [raphaelsalaja](https://github.com/raphaelsalaja/skill) ⚠️ *sem licença declarada* |
+
+```bash
+npx skills add emilkowalski/skills --skill animate      # troque pelo nome da skill
+npx skills add https://github.com/raphaelsalaja/skill --skill 12-principles-of-animation
+```
+
+---
+
+<a id="grp-taste"></a>
+## 🎨 Taste & direções de estilo
+
+**6 skills** de *gosto*, por [Leon Lin](https://github.com/Leonxlnx/taste-skill) (MIT). A diferença pro grupo de Design acima: em vez de **auditar depois**, elas **injetam uma direção estética antes** de você construir. — 🟢 **todas instrução pura**
+
+> 💡 **Como escolher:** `design-taste-frontend` é a genérica — lê o brief e infere a direção. As outras são **direções fechadas**: peça pelo nome quando já souber o visual que quer.
+> ⚠️ **Atenção ao instalar:** no upstream o nome da pasta **diverge do `name:` do frontmatter**. Os nomes abaixo são os do frontmatter (que é o que vale); o nome da pasta no repo original está entre parênteses.
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `design-taste-frontend` *(taste-skill)* | **A principal.** Anti-slop pra landing, portfólio e redesign: lê o brief, infere a direção certa e entrega interface que não parece template. Audit-first em redesign | "faz uma landing que não pareça template", redesign de página | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `high-end-visual-design` *(soft-skill)* | Design de **agência cara**: define fonte, spacing, sombra, estrutura de card e animação que fazem o site parecer caro — e **bloqueia os defaults** que dão cara de IA barata | "quero que pareça premium", site institucional de marca | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `minimalist-ui` *(minimalist-skill)* | Direção **editorial minimalista**: monocromático quente, contraste tipográfico, bento flat, pastel discreto. Sem gradiente, sem sombra pesada | blog, documentação, página de manifesto | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `industrial-brutalist-ui` *(brutalist-skill)* | Direção **brutalista**: print suíço + terminal militar, grid rígido, contraste extremo de escala tipográfica, degradação analógica | dashboard denso, portfólio cru, "cara de documento vazado" | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `gpt-taste` *(gpt-tasteskill)* | UX/UI com **GSAP pesado**: randomização de layout, estrutura AIDA, tipografia editorial larga, bento sem gap, ScrollTrigger com pin/stack/scrub | landing com scroll cinematográfico | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `stitch-design-taste` *(stitch-skill)* | Gera um **`DESIGN.md`** semântico (tipografia estrita, cor calibrada, layout assimétrico, micro-movimento) pra alimentar um agente. Feita pro Google Stitch, mas o arquivo serve a qualquer um | querer um contrato de design em arquivo que o agente siga | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
 
 ---
 
@@ -373,6 +430,14 @@ npx hyperframes skills update motion-graphics   # um workflow específico
 ---
 
 <a id="grp-integracoes"></a>
+> 🎥 **Fora dos dois pacotes acima:**
+> | Skill | Pra que serve | Quando usar | Onde | Fonte |
+> |---|---|---|---|---|
+> | `ui-demo` | **Grava a tela do seu app** e devolve vídeo de demo com cursor visível e ritmo natural, dirigindo o Playwright | GIF pro README, captura pro post, tutorial da interface | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+> | `brag` | Projeto pronto vira **vídeo de lançamento** curto e compartilhável (motor HyperFrames). Lê o código do projeto direto: não precisa de URL no ar nem screenshot | "faz um vídeo de lançamento", mostrar o que você construiu | 🔧 | [latent-spaces/brag](https://github.com/latent-spaces/brag) |
+
+> ⚠️ **`brag` — atenção à licença da trilha:** o código da skill é MIT, mas ela vem com **faixas de música de terceiro** (~13 MB) que **não** são cobertas por essa licença — o próprio README do projeto pede pra verificar e documentar os termos antes de publicar ou redistribuir. Se o vídeo for a público, troque por trilha própria ou confirme a licença na fonte.
+
 ## 🔌 Integrações & mídia por IA
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -425,6 +490,27 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 
 ---
 
+<a id="grp-auditoria"></a>
+## 🔍 Auditoria de código & higiene do setup
+
+**7 skills** pra achar o problema antes do usuário achar — e pra manter o **próprio** setup do agente enxuto. Uma de [shadcn](https://github.com/shadcn/improve) (MIT) e 6 garimpadas do [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT), um mega-harness de 300+ skills do qual vale trazer **peças**, não o conjunto inteiro.
+
+> 💡 **A régua entre elas:** varrer a base e sair com plano → `improve` · "tá pronto pra subir?" → `production-audit` · "o botão não faz nada" → `click-path-audit` · revisar **um diff** → use o `/code-review` nativo, não estas.
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `improve` | **Consultor sênior read-only**: varre a base, acha as oportunidades de maior valor (bug, segurança, performance, cobertura de teste, dívida técnica, migração, DX, próximos passos de produto) e escreve **planos self-contained pra outro modelo/agente mais barato executar**. Nunca edita código | "audita esse repo", "o que fazer nesse projeto agora", gerar plano de handoff | 🟢 | [shadcn/improve](https://github.com/shadcn/improve) |
+| `production-audit` | Prontidão pra produção por lentes (config, segredo, migração, permissão, caminho de erro), com **evidência local** — sem mandar o repo pra serviço externo | véspera de deploy, revisão pós-merge, "o que quebra em produção?" | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `click-path-audit` | Segue o **caminho do clique** ponta a ponta: o handler existe, chega no backend, persiste e volta pra tela. Acha o bug em que duas funções individualmente certas **se cancelam** | "o botão não faz nada", "salvou mas sumiu", depois de refactor que mexeu em estado compartilhado | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `ai-regression-testing` | Ataca o ponto cego do código escrito por IA — **o mesmo modelo escreve e revisa**. Teste de API em sandbox sem depender do banco | depois de uma leva grande de código gerado; "por que só quebra em produção?" | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `config-gc` | **Faxina do setup do agente**: varre skills, memória, hooks, permissões, MCPs e cache atrás do que é redundante, obsoleto ou órfão, confirmando cada exclusão | "meu setup tá inchado", revisão periódica. ⚠️ *ela lê a pasta de config inteira — revise o escopo antes de deixar apagar* | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `skill-stocktake` | **Inventário crítico das suas skills**: avalia qualidade, aponta sobreposição e sugere fusão ou aposentadoria. Tem modo rápido e completo | depois de instalar muita coisa de uma vez; "quais skills eu nunca uso?" | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `loop-design-check` | Desenha e revisa **loop de agente autônomo** contra os cinco modos de falha: girar queimando token, burlar o verificador, ou levar uma resposta errada até o fim | montar ou revisar um loop/cron/agente em background | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+
+> 🧹 **Sobre as duas últimas:** é raro um catálogo de skills indicar skills que **removem** skills. `config-gc` e `skill-stocktake` são a ponta de saída — se você instala muita coisa (como quem lê este repo), elas evitam que o setup vire um depósito.
+
+---
+
 <a id="grp-research"></a>
 ## 🔎 Research & ✨ meta
 
@@ -439,6 +525,8 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 ---
 
 <a id="grp-autorais"></a>
+> 📄 **Documentação que não apodrece:** `living-docs-governance` — dá papel canônico a cada doc do projeto (constituição, mapa, status, histórico) e faz o resto **linkar em vez de copiar**, pra mesma verdade não divergir em N lugares. Use quando a doc começa a contradizer o código, ou quando o agente perde contexto entre sessões. 🟢 · [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT).
+
 ## ✨ Autorais (deste catálogo)
 
 Skills escritas por mim, publicadas **aqui mesmo** — copie a pasta pro seu `~/.claude/skills/` (ou suba o `SKILL.md` no claude.ai web).
@@ -467,6 +555,15 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 |---|---|---|---|
 | [obra/superpowers](https://github.com/obra/superpowers) | Processo (brainstorming, TDD, debugging, planos) | ver repo | `/plugin marketplace add` |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 27 skills de marketing | MIT | `npx skills add coreyhaines31/marketingskills@<skill>` |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) | 10 skills de motion & design engineering (autor do Sonner/Vaul) | MIT | `npx skills add emilkowalski/skills --skill <skill>` |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 6 skills de direção estética anti-slop | MIT | `npx skills add https://github.com/Leonxlnx/taste-skill --skill <skill>` |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 7 garimpadas de um harness de 300+ skills (auditoria, higiene de setup, Vite, demo em vídeo, doc viva) | MIT | `npx skills add https://github.com/affaan-m/ECC --skill <skill>` |
+| [shadcn/improve](https://github.com/shadcn/improve) | Consultor read-only que escreve plano pra outro agente executar | MIT | `npx skills add https://github.com/shadcn/improve --skill improve` |
+| [tryopendata/skills](https://github.com/tryopendata/skills) | `svg-design` — logo e ícone escritos direto em SVG | MIT | `/plugin marketplace add tryopendata/skills` |
+| [latent-spaces/brag](https://github.com/latent-spaces/brag) | Projeto pronto → vídeo de lançamento | MIT *(a trilha inclusa é de terceiro — ver aviso na seção Vídeo)* | `npx skills add https://github.com/latent-spaces/brag --skill brag` |
+| [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | Deck HTML animado; converte PPT/PPTX | MIT | `npx skills add https://github.com/zarazhangrui/frontend-slides --skill frontend-slides` |
+| [raphaelsalaja/skill](https://github.com/raphaelsalaja/skill) | 3 auditoras de motion (12 princípios, AnimatePresence, pseudo-elementos) | ⚠️ sem licença declarada | `npx skills add https://github.com/raphaelsalaja/skill --skill <skill>` |
+| [0xdesign/design-plugin](https://github.com/0xdesign/design-plugin) | `design-lab` — 5 variações de UI + plano | ⚠️ sem licença declarada | `npx skills add https://github.com/0xdesign/design-plugin --skill design-lab` |
 | [phuryn/pm-skills](https://github.com/phuryn/pm-skills) | Metodologia de produto/PM | MIT | `npx skills add phuryn/pm-skills@<skill>` |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | Fluxo de engenharia (to-spec, prototype, diagnosing-bugs, research, teach) | MIT | `npx skills add mattpocock/skills --skill <skill> -g` |
 | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Vídeo em React | Remotion (não-MIT) | `npx skills add remotion-dev/skills@<skill>` |
