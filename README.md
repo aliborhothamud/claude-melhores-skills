@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~230 skills curadas em 16 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~246 skills curadas em 20 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -17,15 +17,19 @@
 | 🎨 [Design & UI](#grp-design) | 11 | interface, protótipo, auditoria visual e de acessibilidade |
 | 🎞️ [Motion & animação](#grp-motion) | 13 | fazer a interface se mexer com critério (web e React Native) |
 | 🎨 [Taste & direções de estilo](#grp-taste) | 6 | injetar uma estética **antes** de construir, não auditar depois |
+| 📐 [Diagramas & explicadores](#grp-diagramas) | 2 | diagrama editorial pronto pra apresentar e ilustração técnica isométrica |
 | 📣 [Marketing](#grp-marketing) | 27 | growth, copy, SEO, ads, lançamento, vendas |
 | 📋 [Produto & PM](#grp-produto) | 23 | PRD, discovery, estratégia, métricas, priorização |
 | 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
 | 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
+| ✂️ [Código enxuto](#grp-enxuto) | 2 | o agente escrever o mínimo que resolve e dizer o que pulou |
 | 🎬 [Vídeo](#grp-video) | 22 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
-| 🔍 [Auditoria & higiene](#grp-auditoria) | 7 | achar o bug antes do usuário — e manter o próprio setup enxuto |
+| 🔍 [Auditoria & higiene](#grp-auditoria) | 8 | achar o bug antes do usuário — e manter o próprio setup enxuto |
+| 🧭 [Entender codebase](#grp-entender) | 9 | transformar um repo num grafo navegável e tirar dúvida sobre ele |
+| 📈 [Dados & forecasting](#grp-dados) | 2 | forecast de série temporal com intervalo e baseline explicável |
 | 🔎 [Research & meta](#grp-research) | 5 | pesquisa, prompt, fábrica de skills |
 | ✨ [Autorais](#grp-autorais) | 2 | ⭐ escritas por mim, publicadas aqui |
 
@@ -87,7 +91,12 @@ Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a ski
 | **Vídeo** (Remotion 8 · HyperFrames 12) | ✅ | ❌ | ⚠️ |
 | **Browser/testes** (webapp-testing) | ✅ | ❌ | ⚠️ |
 | **Research local** (last30days) | ✅ | ❌ | ⚠️ |
+| **Diagramas** (diagram-design, anatomy) | ✅ | ❌ | ⚠️ |
+| **Entender codebase** (understand-*) | ✅ | ❌ | ⚠️ |
+| **Forecast com modelo local** (timesfm-forecasting) | ✅ | ❌ | ⚠️ |
+| **Estatística em Python** (statsmodels) | ✅ | ⚠️ | ✅ |
 | **Economia de token — instrução pura** (caveman, help, commit, review) | ✅ | ✅ | ✅ |
+| **Código enxuto** (ponytail) | ✅ | ✅ | ✅ |
 | **Economia de token — com hook/script/subagente** (compress, cavecrew, stats) | ✅ | ❌ | ⚠️ |
 | **MCP-backed** (skill-builder, sentry-fix, Notion) | ✅¹ | ⚠️¹ | ✅¹ |
 
@@ -205,19 +214,35 @@ npx skills add https://github.com/raphaelsalaja/skill --skill 12-principles-of-a
 <a id="grp-taste"></a>
 ## 🎨 Taste & direções de estilo
 
-**6 skills** de *gosto*, por [Leon Lin](https://github.com/Leonxlnx/taste-skill) (MIT). A diferença pro grupo de Design acima: em vez de **auditar depois**, elas **injetam uma direção estética antes** de você construir. — 🟢 **todas instrução pura**
+**6 skills** de *gosto*, por [Leon Lin](https://github.com/Leonxlnx) (MIT). A diferença pro grupo de Design acima: em vez de **auditar depois**, elas **injetam uma direção estética antes** de você construir. — 🟢 **todas instrução pura**
 
-> 💡 **Como escolher:** `design-taste-frontend` é a genérica — lê o brief e infere a direção. As outras são **direções fechadas**: peça pelo nome quando já souber o visual que quer.
-> ⚠️ **Atenção ao instalar:** no upstream o nome da pasta **diverge do `name:` do frontmatter**. Os nomes abaixo são os do frontmatter (que é o que vale); o nome da pasta no repo original está entre parênteses.
+> 🔀 **O repo mudou em outubro/2026.** A versão "com dials" e as 5 direções fechadas foram pro [`Leonxlnx/taste-skill-classics`](https://github.com/Leonxlnx/taste-skill-classics). O [`taste-skill`](https://github.com/Leonxlnx/taste-skill) principal virou a **v2**: um pipeline que sorteia direção de arte, testa a página num navegador real e busca fotos em acervos abertos. **Esta curadoria fica com a versão com dials:** no [teste cego publicado pelo próprio autor](https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/research.md), a v2 ficou abaixo ou empatada com *não usar skill nenhuma* nas 5 rodadas.
+> 🔒 **No classics, as 6 só rodam por comando** (`/minimalist-ui`, `/gpt-taste`…): decisão do autor pra elas não dispararem sozinhas. Peça pelo nome quando já souber o visual.
+> ⚠️ **Nome × pasta:** no upstream o nome da pasta **diverge do `name:` do frontmatter**. Os nomes abaixo são os do frontmatter (que é o que vale); a pasta original está entre parênteses.
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
-| `design-taste-frontend` *(taste-skill)* | **A principal.** Anti-slop pra landing, portfólio e redesign: lê o brief, infere a direção certa e entrega interface que não parece template. Audit-first em redesign | "faz uma landing que não pareça template", redesign de página | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
-| `high-end-visual-design` *(soft-skill)* | Design de **agência cara**: define fonte, spacing, sombra, estrutura de card e animação que fazem o site parecer caro — e **bloqueia os defaults** que dão cara de IA barata | "quero que pareça premium", site institucional de marca | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
-| `minimalist-ui` *(minimalist-skill)* | Direção **editorial minimalista**: monocromático quente, contraste tipográfico, bento flat, pastel discreto. Sem gradiente, sem sombra pesada | blog, documentação, página de manifesto | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
-| `industrial-brutalist-ui` *(brutalist-skill)* | Direção **brutalista**: print suíço + terminal militar, grid rígido, contraste extremo de escala tipográfica, degradação analógica | dashboard denso, portfólio cru, "cara de documento vazado" | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
-| `gpt-taste` *(gpt-tasteskill)* | UX/UI com **GSAP pesado**: randomização de layout, estrutura AIDA, tipografia editorial larga, bento sem gap, ScrollTrigger com pin/stack/scrub | landing com scroll cinematográfico | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
-| `stitch-design-taste` *(stitch-skill)* | Gera um **`DESIGN.md`** semântico (tipografia estrita, cor calibrada, layout assimétrico, micro-movimento) pra alimentar um agente. Feita pro Google Stitch, mas o arquivo serve a qualquer um | querer um contrato de design em arquivo que o agente siga | 🟢 | [Leonxlnx](https://github.com/Leonxlnx/taste-skill) |
+| `design-taste-frontend-v2-experimental` *(taste-skill-v2-experimental)* | **A principal, com dials.** Anti-slop pra landing, portfólio e redesign: lê o brief, infere a direção certa e entrega interface que não parece template. Audit-first em redesign | "faz uma landing que não pareça template", redesign de página | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+| `high-end-visual-design` *(soft-skill)* | Design de **agência cara**: define fonte, spacing, sombra, estrutura de card e animação que fazem o site parecer caro — e **bloqueia os defaults** que dão cara de IA barata | "quero que pareça premium", site institucional de marca | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+| `minimalist-ui` *(minimalist-skill)* | Direção **editorial minimalista**: monocromático quente, contraste tipográfico, bento flat, pastel discreto. Sem gradiente, sem sombra pesada, com `prefers-reduced-motion` | blog, documentação, página de manifesto | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+| `industrial-brutalist-ui` *(brutalist-skill)* | Direção **brutalista**: print suíço + terminal militar, grid rígido, contraste extremo de escala tipográfica, degradação analógica | dashboard denso, portfólio cru, "cara de documento vazado" | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+| `gpt-taste` *(gpt-tasteskill)* | UX/UI com **GSAP pesado**: randomização de layout, estrutura AIDA, tipografia editorial larga, bento sem gap, ScrollTrigger com pin/stack/scrub — e todo movimento respeita `prefers-reduced-motion` | landing com scroll cinematográfico | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+| `stitch-design-taste` *(stitch-skill)* | Gera um **`DESIGN.md`** semântico (tipografia estrita, cor calibrada, layout assimétrico, micro-movimento) pra alimentar um agente. Feita pro Google Stitch, mas o arquivo serve a qualquer um | querer um contrato de design em arquivo que o agente siga | 🟢 | [taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) |
+
+---
+
+<a id="grp-diagramas"></a>
+## 📐 Diagramas & explicadores
+
+**2 skills** pra quando o entregável é uma figura. A pergunta que separa as duas: é um **diagrama pra apresentar** (o caso comum) ou uma **peça-herói** que explica um conceito como um objeto físico?
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `diagram-design` | **Diagrama editorial pronto pra apresentar**, com a sua marca, num único HTML+SVG. São 45 tipos (arquitetura, fluxograma, sequência, ER, swimlane, matriz 2×2, waterfall, medallion, Sankey, Wardley, service blueprint, Gantt…), com limite de complexidade (até 9 nós), checklist anti-slop, perfis de marca e redesenho de `.drawio`/Mermaid/Excalidraw. Exporta SVG e PNG | "faz um diagrama pra apresentação", arquitetura pro deck ou pra doc, ponte orçado × realizado, "deixa esse mermaid apresentável" | 🔧 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) |
+| `anatomy` | **Explica um conceito técnico como uma máquina isométrica de verdade**: um cache que pula trabalho vira uma fechadura de pinos que só gira quando todos batem. Peças sólidas, legenda, leitura ao vivo e motion calmo. Sai como HTML, SVG, componente React, PNG ou pôster A4 em PDF | peça-herói pra post, capa de artigo ou pôster — leva horas, não minutos | 🔧 | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) |
+
+> ⚠️ **Se instalar as duas:** a description da `anatomy` também puxa "figura explicativa pra documentação", então ela disputa o pedido com a `diagram-design`. Vale deixar a `anatomy` só por comando (`disable-model-invocation: true` no frontmatter). E o fluxo de "publicar na galeria" da `anatomy` abre um **PR público com o seu prompt** — não use com conteúdo confidencial.
+> 💡 **`diagram-design`:** o PNG sai via Playwright (Python + Chromium), e o HTML gerado carrega Google Fonts ao abrir (há modo offline). Os comandos do plugin incluem um `/doctor`, que colide com o comando nativo do Claude Code — instalando como skill, você pede "roda o doctor do diagram-design" em linguagem natural.
 
 ---
 
@@ -371,6 +396,22 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 ---
 
+<a id="grp-enxuto"></a>
+## ✂️ Código enxuto — `DietrichGebert/ponytail`
+
+A gêmea de código da `caveman`: a caveman enxuga a **prosa**, a ponytail enxuga o **código**. **2 de 6 skills**, por [DietrichGebert](https://github.com/DietrichGebert/ponytail) (MIT).
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `ponytail` | Modo **"dev sênior preguiçoso"**: a menor mudança que resolve por completo, reusa o que já existe, prefere stdlib a dependência nova e nunca corta validação nem segurança. Fecha toda resposta com **o que pulou, o que não checou e o risco** | `/ponytail [lite\|full\|ultra]`, "faz o mais simples", "tá over-engineered" | 🟢 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+| `ponytail-debt` | Lista todo comentário `shortcut:` que a ponytail deixou pra depois: o livro-razão da dívida consciente | "o que ficou de atalho nesse repo?" | 🔧 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+
+> ⚠️ **Plugin × skill solta:** o plugin oficial instala hooks que ligam o modo em **toda** sessão e injetam as regras em todo subagente. Instalando só as skills, ela fica opt-in (`/ponytail`). Os números do README (−53% de código, −26% de custo) foram medidos com o plugin inteiro — não espere o mesmo da skill solta.
+> 📊 **A distribuição, não só a média:** no [benchmark de 07/10 do próprio autor](https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/results/2026-10-07-agentic.md), ela pega **mais** bug injetado no total (66% × 46% sem skill), porque escreve teste onde a lógica pede (98% × 68%). Mas, onde já existe teste, o dela é mais raso (pega 69% × 77%).
+> 💡 Ficaram fora desta curadoria: `ponytail-review` (já há rotas demais pra revisar diff), `ponytail-audit`, `ponytail-gain` e `ponytail-help`.
+
+---
+
 <a id="grp-video"></a>
 ## 🎬 Vídeo — pacote `remotion-dev/skills`
 Vídeo programático em React (8 skills, por [Remotion](https://github.com/remotion-dev/skills)). Reels, ads, vídeos data-driven. — 🔧 **todas precisam de ambiente** (Node/render → Code / Cowork)
@@ -493,9 +534,9 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 <a id="grp-auditoria"></a>
 ## 🔍 Auditoria de código & higiene do setup
 
-**7 skills** pra achar o problema antes do usuário achar — e pra manter o **próprio** setup do agente enxuto. Uma de [shadcn](https://github.com/shadcn/improve) (MIT) e 6 garimpadas do [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT), um mega-harness de 300+ skills do qual vale trazer **peças**, não o conjunto inteiro.
+**8 skills** pra achar o problema antes do usuário achar — e pra manter o **próprio** setup do agente enxuto. Uma de [shadcn](https://github.com/shadcn/improve) (MIT) e 7 garimpadas do [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT), um mega-harness de 300+ skills do qual vale trazer **peças**, não o conjunto inteiro.
 
-> 💡 **A régua entre elas:** varrer a base e sair com plano → `improve` · "tá pronto pra subir?" → `production-audit` · "o botão não faz nada" → `click-path-audit` · revisar **um diff** → use o `/code-review` nativo, não estas.
+> 💡 **A régua entre elas:** varrer a base e sair com plano → `improve` · "tá pronto pra subir?" → `production-audit` · "o botão não faz nada" → `click-path-audit` · "vou plugar um MCP" → `mcp-dependency-review` · revisar **um diff** → use o `/code-review` nativo, não estas.
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
@@ -504,10 +545,50 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 | `click-path-audit` | Segue o **caminho do clique** ponta a ponta: o handler existe, chega no backend, persiste e volta pra tela. Acha o bug em que duas funções individualmente certas **se cancelam** | "o botão não faz nada", "salvou mas sumiu", depois de refactor que mexeu em estado compartilhado | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `ai-regression-testing` | Ataca o ponto cego do código escrito por IA — **o mesmo modelo escreve e revisa**. Teste de API em sandbox sem depender do banco | depois de uma leva grande de código gerado; "por que só quebra em produção?" | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `config-gc` | **Faxina do setup do agente**: varre skills, memória, hooks, permissões, MCPs e cache atrás do que é redundante, obsoleto ou órfão, confirmando cada exclusão | "meu setup tá inchado", revisão periódica. ⚠️ *ela lê a pasta de config inteira — revise o escopo antes de deixar apagar* | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
-| `skill-stocktake` | **Inventário crítico das suas skills**: avalia qualidade, aponta sobreposição e sugere fusão ou aposentadoria. Tem modo rápido e completo | depois de instalar muita coisa de uma vez; "quais skills eu nunca uso?" | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
-| `loop-design-check` | Desenha e revisa **loop de agente autônomo** contra os cinco modos de falha: girar queimando token, burlar o verificador, ou levar uma resposta errada até o fim | montar ou revisar um loop/cron/agente em background | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `skill-stocktake` | **Inventário crítico das suas skills**: avalia qualidade, aponta sobreposição e sugere fusão ou aposentadoria. Tem modo rápido e completo. ⚙️ *precisa de `jq`* | depois de instalar muita coisa de uma vez; "quais skills eu nunca uso?" | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `loop-design-check` | Desenha e revisa **loop de agente autônomo** contra os cinco modos de falha: girar queimando token, burlar o verificador, ou levar uma resposta errada até o fim | montar ou revisar um loop/cron/agente em background | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `mcp-dependency-review` | **Revisão estática da config de MCP** (`.mcp.json`, Cursor, VS Code, Claude) atrás de pacote com versão solta — `@latest`, sem versão, branch de git — antes de aprovar ou subir no CI. Não executa nenhum servidor | antes de plugar ou atualizar um MCP, revisar o `.mcp.json` de um repo | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 
 > 🧹 **Sobre as duas últimas:** é raro um catálogo de skills indicar skills que **removem** skills. `config-gc` e `skill-stocktake` são a ponta de saída — se você instala muita coisa (como quem lê este repo), elas evitam que o setup vire um depósito.
+
+---
+
+<a id="grp-entender"></a>
+## 🧭 Entender codebase — plugin `Egonex-AI/Understand-Anything`
+
+**9 skills** de um plugin ([Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything), MIT) que transforma um repositório num **grafo de conhecimento**: cada arquivo resumido, as dependências entre eles, as camadas da arquitetura e um tour guiado, com um painel web local pra navegar. — 🔧 **todas precisam de ambiente** (Node + o núcleo do plugin)
+
+> ⚠️ **Instale como plugin, não como skill solta.** Os scripts das skills importam o núcleo do plugin (`@understand-anything/core`); copiar só as pastas de skill quebra. Pelo `/plugin`, o Claude Code resolve isso.
+> 💡 **Custo:** a análise completa dispara um subagente por lote de arquivos e pode custar milhões de tokens. Na primeira rodada, recorte numa subpasta (`src/`, por exemplo).
+> ⚠️ **Alias de import:** o mapa de imports só lê o `tsconfig.json` da raiz. Em projeto Vite, o alias `@/` costuma morar no `tsconfig.app.json` e essas arestas somem do grafo — confira antes de confiar nas dependências.
+
+| Skill | Pra que serve | Quando usar | Onde |
+|---|---|---|---|
+| `understand` | Analisa o repo e gera o grafo (`knowledge-graph.json`) | primeira vez num codebase grande ou herdado | 🔧 |
+| `understand-dashboard` | Abre o painel web local pra explorar o grafo | depois do `/understand`, pra navegar | 🔧 |
+| `understand-chat` | Responde perguntas sobre o código usando o grafo | "como funciona X?", "onde mora Y?" | 🔧 |
+| `understand-explain` | Explicação a fundo de um arquivo, função ou módulo | antes de mexer numa peça que você não conhece | 🔧 |
+| `understand-diff` | Lê um diff ou PR contra o grafo: o que mudou, o que é afetado e o risco | revisar o impacto de uma mudança | 🔧 |
+| `understand-onboard` | Gera um guia de onboarding do projeto | entrar num projeto novo ou receber alguém no time | 🔧 |
+| `understand-domain` | Extrai o domínio de negócio (fluxos e regras) num grafo próprio | entender o "o quê" do negócio, não só o código | 🔧 |
+| `understand-knowledge` | Grafo de uma base de notas em Markdown no padrão "LLM wiki" | organizar uma pasta de notas ou documentação | 🔧 |
+| `understand-figma` | Grafo de design de um arquivo do Figma (páginas, telas, componentes, tokens) | ligar design e código. ⚠️ usa a API REST do Figma: precisa de token | 🔧 |
+
+---
+
+<a id="grp-dados"></a>
+## 📈 Dados & forecasting — `K-Dense-AI/scientific-agent-skills`
+
+**2 de 177** skills do pacote científico da [K-Dense](https://github.com/K-Dense-AI/scientific-agent-skills) (MIT; o antigo `claude-scientific-skills`). O resto é bio, química, física e clínica. Estas duas cobrem **forecast de verdade**, além da média móvel.
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `timesfm-forecasting` | Forecast **zero-shot** de série temporal com o **TimesFM**, do Google: prepara o CSV, devolve **quantis** (não só a média), aceita covariáveis e avalia com janela móvel | projetar vendas, demanda ou qualquer série com intervalo de confiança | 🔧 | [K-Dense-AI](https://github.com/K-Dense-AI/scientific-agent-skills) |
+| `statsmodels` | **Baseline clássico e explicável**: OLS, GLM, ARIMA/SARIMAX/ETS, regressão com erro HAC, efeito marginal e diagnóstico | "qual o driver disso?", "a série é estacionária?", baseline pra comparar com o forecast de IA | 🟢 | [K-Dense-AI](https://github.com/K-Dense-AI/scientific-agent-skills) |
+
+> 💡 **Use em par:** forecast de modelo de fundação sem baseline clássico não prova nada. Entregue o TimesFM ao lado de um ETS/SARIMAX e mostre os quantis.
+> ⚠️ **Antes de instalar:** a `timesfm-forecasting` cria o venv (com PyTorch) na pasta em que você está — rode de fora de qualquer repo. O checkpoint do modelo (~0,8 GB) baixa no cache do Hugging Face. Os pesos do TimesFM 2.5 são Apache-2.0; os do 3.0 são **não comerciais**.
+> ⚠️ **Autocitação:** 137 das 177 skills do pacote (incluindo a `statsmodels`) trazem uma seção que manda o agente **pôr o paper da K-Dense no seu relatório ou código**. Apague essa seção do `SKILL.md` se não quiser.
 
 ---
 
@@ -556,8 +637,13 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [obra/superpowers](https://github.com/obra/superpowers) | Processo (brainstorming, TDD, debugging, planos) | ver repo | `/plugin marketplace add` |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 27 skills de marketing | MIT | `npx skills add coreyhaines31/marketingskills@<skill>` |
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 10 skills de motion & design engineering (autor do Sonner/Vaul) | MIT | `npx skills add emilkowalski/skills --skill <skill>` |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 6 skills de direção estética anti-slop | MIT | `npx skills add https://github.com/Leonxlnx/taste-skill --skill <skill>` |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 7 garimpadas de um harness de 300+ skills (auditoria, higiene de setup, Vite, demo em vídeo, doc viva) | MIT | `npx skills add https://github.com/affaan-m/ECC --skill <skill>` |
+| [Leonxlnx/taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics) | 6 skills de direção estética anti-slop (a versão com dials + 5 direções fechadas) | MIT | `npx skills add https://github.com/Leonxlnx/taste-skill-classics --skill <skill>` |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 8 garimpadas de um harness de 300+ skills (auditoria, higiene de setup, Vite, demo em vídeo, doc viva, versão de MCP) | MIT | `npx skills add https://github.com/affaan-m/ECC --skill <skill>` |
+| [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | Diagrama editorial com marca, 45 tipos, HTML+SVG+PNG | MIT | `npx skills add cathrynlavery/diagram-design` |
+| [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | Conceito técnico explicado como máquina isométrica | MIT | `npx skills add wheresryan22/anatomy -g` |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Código enxuto (ponytail, ponytail-debt) | MIT | `npx skills add DietrichGebert/ponytail --skill <skill>` *(só as skills, sem os hooks do plugin)* |
+| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | 9 skills que transformam um repo em grafo de conhecimento + painel web | MIT | `/plugin marketplace add Egonex-AI/Understand-Anything` e `/plugin install understand-anything` |
+| [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 2 de 177: forecast com TimesFM e baseline com statsmodels | MIT *(pesos do TimesFM 2.5: Apache-2.0; os do 3.0 são não comerciais)* | `npx skills add https://github.com/K-Dense-AI/scientific-agent-skills --skill <skill>` |
 | [shadcn/improve](https://github.com/shadcn/improve) | Consultor read-only que escreve plano pra outro agente executar | MIT | `npx skills add https://github.com/shadcn/improve --skill improve` |
 | [tryopendata/skills](https://github.com/tryopendata/skills) | `svg-design` — logo e ícone escritos direto em SVG | MIT | `/plugin marketplace add tryopendata/skills` |
 | [latent-spaces/brag](https://github.com/latent-spaces/brag) | Projeto pronto → vídeo de lançamento | MIT *(a trilha inclusa é de terceiro — ver aviso na seção Vídeo)* | `npx skills add https://github.com/latent-spaces/brag --skill brag` |
