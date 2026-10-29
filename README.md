@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~267 skills curadas em 21 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~274 skills curadas em 22 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -15,6 +15,7 @@
 | 💻 [Desenvolvimento](#grp-dev) | 13 | dev React/TS/Supabase/Capacitor + segurança + performance |
 | ⚙️ [Fluxo de engenharia](#grp-fluxo) | 5 | workflows de dev disciplinados (spec, protótipo, debug) |
 | 🎨 [Design & UI](#grp-design) | 11 | interface, protótipo, auditoria visual e de acessibilidade |
+| 🎨 [Canva](#grp-canva) | 7 | editar, revisar, redimensionar e checar marca de designs no Canva |
 | 🎞️ [Motion & animação](#grp-motion) | 13 | fazer a interface se mexer com critério (web e React Native) |
 | 🎨 [Taste & direções de estilo](#grp-taste) | 6 | injetar uma estética **antes** de construir, não auditar depois |
 | 📐 [Diagramas & explicadores](#grp-diagramas) | 2 | diagrama editorial pronto pra apresentar e ilustração técnica isométrica |
@@ -99,7 +100,7 @@ Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a ski
 | **Economia de token — instrução pura** (caveman, help, commit, review) | ✅ | ✅ | ✅ |
 | **Código enxuto** (ponytail) | ✅ | ✅ | ✅ |
 | **Economia de token — com hook/script/subagente** (compress, cavecrew, stats) | ✅ | ❌ | ⚠️ |
-| **MCP-backed** (skill-builder, sentry-fix, Notion) | ✅¹ | ⚠️¹ | ✅¹ |
+| **MCP-backed** (skill-builder, sentry-fix, Notion, Canva) | ✅¹ | ⚠️¹ | ✅¹ |
 
 ✅ funciona · ❌ não roda · ⚠️ parcial/depende do ambiente · ¹ precisa do MCP/conector ligado
 
@@ -179,6 +180,24 @@ npx skills add mattpocock/skills --skill to-spec --skill prototype --skill diagn
 | `frontend-slides` | Deck HTML animado do zero **ou convertendo PPT/PPTX** pra web | converter apresentação existente, deck de talk com animação | 🔧 | [zarazhangrui](https://github.com/zarazhangrui/frontend-slides) |
 | `design-lab` | Entrevista você, gera **5 variações distintas** de UI num lab temporário e devolve plano de implementação | explorar opções de design, comparar abordagens antes de escolher | 🟢 | [0xdesign](https://github.com/0xdesign/design-plugin) ⚠️ *sem licença declarada* |
 | `stop-slop` | Tira a "cara de IA" de textos (remove padrões previsíveis) | escrever, editar ou revisar texto | 🟢 | [Hardik Pandya](https://hvpandya.com) |
+
+---
+
+<a id="grp-canva"></a>
+## 🎨 Canva — plugin oficial `canva-sdks/canva-skills`
+
+> Precisam do **conector da Canva** ligado (claude.ai → Configurações → Conectores).
+> Instale pelo plugin oficial: `/plugin marketplace add canva-sdks/canva-skills` e `/plugin install canva@canva-skills`.
+
+| Skill | Pra que serve | Quando usar | Onde |
+|---|---|---|---|
+| `canva-edit-design` | Edita um design com segurança: abre transação e só grava com sua aprovação | mudar texto, trocar imagem, traduzir | 🔧 |
+| `canva-design-feedback` | Revisão só-leitura: hierarquia, copy, layout, legibilidade, acessibilidade | "revisa meu design" | 🔧 |
+| `canva-brand-check` | Compara o design com o brand kit (cores, fontes, logo, tom) | "isso tá on brand?" | 🔧 |
+| `canva-implement-feedback` | Lê os comentários do design, aplica o que é claro e marca o que precisa de decisão | aplicar comentários de revisão | 🔧 |
+| `canva-resize-for-social-media` | Um design → 5 formatos sociais de uma vez (Facebook, Instagram, LinkedIn) | adaptar um post pra várias redes | 🔧 |
+| `canva-bulk-create` | Uma peça por linha de planilha, preenchendo um brand template | gerar um card por produto ou evento | 🔧 |
+| `canva-cli` | API REST da Canva pelo CLI `canva api` | automação com arquivos locais | 🔧 |
 
 ---
 
@@ -705,6 +724,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [Anthropic](https://github.com/anthropics/skills) | frontend-design, canvas-design (oficiais) | Apache 2.0 | vêm com o Claude Code |
 | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
 | [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) | 21 skills de QA e automação de testes | MIT | `npx skills add petrkindlmann/qa-skills <skill>` |
+| [canva-sdks/canva-skills](https://github.com/canva-sdks/canva-skills) | 7 skills oficiais da Canva | Apache-2.0 | `/plugin marketplace add canva-sdks/canva-skills` |
 | [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
 > As licenças variam. Antes de usar comercialmente, cheque a licença no repositório de origem — em especial Remotion (não-MIT) e as integrações que exigem conta paga (fal, stripe, sentry).
