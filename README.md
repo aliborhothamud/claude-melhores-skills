@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~246 skills curadas em 20 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~267 skills curadas em 21 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -28,6 +28,7 @@
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
 | 🔍 [Auditoria & higiene](#grp-auditoria) | 8 | achar o bug antes do usuário — e manter o próprio setup enxuto |
+| 🧪 [QA & testes](#grp-qa) | 21 | E2E, API, mobile, a11y, flaky, triagem de falha e teste do próprio agente de IA |
 | 🧭 [Entender codebase](#grp-entender) | 9 | transformar um repo num grafo navegável e tirar dúvida sobre ele |
 | 📈 [Dados & forecasting](#grp-dados) | 2 | forecast de série temporal com intervalo e baseline explicável |
 | 🔎 [Research & meta](#grp-research) | 5 | pesquisa, prompt, fábrica de skills |
@@ -553,6 +554,42 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 
 ---
 
+<a id="grp-qa"></a>
+## 🧪 QA & testes — pacote `petrkindlmann/qa-skills`
+
+Pacote de QA bem acima da média: cada skill diz o que **não** é e pra qual mandar, e várias trazem lista de "não faça" escrita pra agente. **21 de 50 skills**, por [Petr Kindlmann](https://github.com/petrkindlmann/qa-skills) (MIT).
+
+> 💡 **A régua com as vizinhas:** E2E novo → `playwright-automation` · bug vago → `bug-reproduction` · "tá pronto pra subir?" → `production-audit` olha o código, `release-readiness` decide o go/no-go · agente de IA → `ai-system-testing`.
+
+| Skill | Pra que serve | Quando usar | Onde | Fonte |
+|---|---|---|---|---|
+| `qa-do` | Roteador do pacote: situação de QA em linguagem comum → as 1–2 skills certas, executadas com evidência | "por onde começo o QA?", "valida esse app" | 🟢 | [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) |
+| `qa-start` | Projeto sem QA nenhum: contexto → estratégia → plano numa rodada | "QA do zero" | 🟢 | idem |
+| `qa-project-context` | Cria o arquivo de contexto de QA (stack, CI, ambientes, riscos) que as outras skills leem primeiro | primeira vez de QA num repo | 🟢 | idem |
+| `risk-based-testing` | Matriz impacto × probabilidade: onde vale gastar teste | "o que pode quebrar?" | 🟢 | idem |
+| `exploratory-testing` | Sessão exploratória com charter e heurísticas; achado vira teste automatizado | "caça bug" | 🟢 | idem |
+| `playwright-automation` | Suíte Playwright de produção, com lista de "não faça" pra agente | "escreve teste E2E" | 🟢 | idem |
+| `api-testing` | API REST/GraphQL com schema (Zod, AJV), auth e CRUD | "testa o endpoint" | 🟢 | idem |
+| `mobile-testing` | Detox, Maestro e Appium: deep link, permissão, offline | "teste mobile" | 🟢 | idem |
+| `accessibility-testing` | WCAG 2.2 AA com axe, teclado e leitor de tela | "a11y", "WCAG" | 🟢 | idem |
+| `security-testing` | OWASP Top 10 (2025) automatizado no CI | "teste de segurança" | 🟢 | idem |
+| `database-testing` | Migração ida e volta, constraints, drift e seed | "testa a migration" | 🟢 | idem |
+| `email-testing` | Confirmação de cadastro, magic link e OTP com caixa de captura | "testa o e-mail de cadastro" | 🟢 | idem |
+| `ai-bug-triage` | Falha de CI → impressão digital + LLM: classifica, deduplica e escreve o ticket | "classifica as falhas do CI" | 🟢 | idem |
+| `bug-reproduction` | Relato vago → repro mínima → teste que falha antes do fix; git bisect | "reproduz esse bug" | 🟢 | idem |
+| `test-reliability` | Teste instável: classifica o flake, quarentena, correção com evidência | "teste flaky" | 🟢 | idem |
+| `ai-system-testing` | Testa feature ou agente de IA (eval, alucinação, injeção indireta); traz um detector de prompt injection | "testa nosso agente" | 🔧 | idem |
+| `agentic-browser-testing` | E2E por objetivo: um agente de navegador explora o app e afirma o resultado | "deixa um agente explorar o app" | 🔧 | idem |
+| `release-readiness` | Go/no-go com evidência: checklist, smoke, rollback | "tá pronto pra lançar?" | 🟢 | idem |
+| `qa-report-humanizer` | Tira o tom de IA de relatório e bug report sem inventar fato | "humaniza o relatório" | 🟢 | idem |
+| `synthetic-monitoring` | Sondas agendadas em produção, alerta e SLA | "monitoramento sintético" | 🟢 | idem |
+| `qa-metrics` | Métrica de QA com fórmula e a ação quando fica vermelha | "taxa de flaky", "MTTR" | 🟢 | idem |
+
+> 💡 Ficaram fora desta curadoria as 29 que pedem ferramenta específica (Cypress, TestRail/Xray, BrowserStack, k6, Pact, Allure/Grafana, LitmusChaos) ou um time de QA dedicado. Instale da fonte a que precisar.
+> ⚠️ No Windows, o `git clone` do repo falha no checkout por caminho longo: `git config core.longpaths true` e `git restore --source=HEAD :/` resolvem. O `npx skills add` não tem esse problema.
+
+---
+
 <a id="grp-entender"></a>
 ## 🧭 Entender codebase — plugin `Egonex-AI/Understand-Anything`
 
@@ -667,6 +704,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Fábrica de skills (skill-builder / MCP) | ver repo | ver repo |
 | [Anthropic](https://github.com/anthropics/skills) | frontend-design, canvas-design (oficiais) | Apache 2.0 | vêm com o Claude Code |
 | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
+| [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) | 21 skills de QA e automação de testes | MIT | `npx skills add petrkindlmann/qa-skills <skill>` |
 | [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
 > As licenças variam. Antes de usar comercialmente, cheque a licença no repositório de origem — em especial Remotion (não-MIT) e as integrações que exigem conta paga (fal, stripe, sentry).
