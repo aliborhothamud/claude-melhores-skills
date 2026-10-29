@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~274 skills curadas em 22 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~269 skills curadas em 22 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -24,7 +24,7 @@
 | 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
 | 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
 | ✂️ [Código enxuto](#grp-enxuto) | 2 | o agente escrever o mínimo que resolve e dizer o que pulou |
-| 🎬 [Vídeo](#grp-video) | 22 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
+| 🎬 [Vídeo](#grp-video) | 17 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
@@ -90,7 +90,7 @@ Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a ski
 | **Design — geração** (frontend-design, canvas-design, ui-ux-pro-max) | ✅ | ✅ | ✅ |
 | **Prompt** (prompt-master, prompt-engineer) · **GSAP** | ✅ | ✅ | ✅ |
 | **Design com hook/deps** (impeccable, huashu-design, logo-generator) | ✅ | ❌ | ⚠️ |
-| **Vídeo** (Remotion 8 · HyperFrames 12) | ✅ | ❌ | ⚠️ |
+| **Vídeo** (Remotion 8 · HyperFrames 7) | ✅ | ❌ | ⚠️ |
 | **Browser/testes** (webapp-testing) | ✅ | ❌ | ⚠️ |
 | **Research local** (last30days) | ✅ | ❌ | ⚠️ |
 | **Diagramas** (diagram-design, anatomy) | ✅ | ❌ | ⚠️ |
@@ -453,38 +453,40 @@ Vídeo programático em React (8 skills, por [Remotion](https://github.com/remot
 
 <a id="grp-hyperframes"></a>
 ## 🎬 Vídeo — pacote `heygen-com/hyperframes`
-Vídeo programático em **HTML + CSS + GSAP** (12 de 19 skills, por [HeyGen](https://github.com/heygen-com/hyperframes)). Mesma mecânica do Remotion acima — Chrome headless + FFmpeg — mas a autoria é HTML puro **sem build step**, e a licença é **Apache-2.0, sem taxa por render**. — 🔧 **todas precisam de ambiente** (Node ≥22 + FFmpeg → Code / Cowork)
+Vídeo programático em **HTML** (as 7 skills publicadas, por [HeyGen](https://github.com/heygen-com/hyperframes) · conferido na v0.8.217, 29/10/2026). Mesma mecânica do Remotion acima — Chrome headless + FFmpeg — mas a autoria é HTML puro **sem build step**, e a licença é **Apache-2.0, sem taxa por render**. — 🔧 **todas precisam de ambiente** (Node ≥22 + FFmpeg → Code / Cowork)
 
-**Core (8)** — a base que o router compõe
-
-| Skill | O que faz | Quando usar |
-|---|---|---|
-| `hyperframes` | **Router — leia primeiro.** Mapa de capacidades; captura a intenção e instala o workflow certo sob demanda | qualquer "faz/edita/anima/renderiza um vídeo" |
-| `hyperframes-core` | O contrato da composição: `data-*` de timing, `class="clip"`, tracks, sub-composições, regras de determinismo | antes de escrever o HTML da composição |
-| `hyperframes-animation` | Todo o conhecimento de movimento: regras atômicas, blueprints de cena, transições, 7 runtimes (GSAP padrão + Lottie, Three.js, Anime.js, CSS, WAAPI, TypeGPU) | animar, ou auditar a coreografia |
-| `hyperframes-keyframes` | Keyframes seek-safe: timelines GSAP, CSS, FLIP, paths, máscaras, morph/draw de SVG, 3D | animação quebrando ao dar seek |
-| `hyperframes-creative` | Direção criativa não-animada: `frame.md`/`design.md`, paleta, tipografia, narração, plano de beats | decidir o visual antes de animar |
-| `hyperframes-cli` | O loop de dev: `init` `lint` `check` `preview` `render` `doctor` + render em cloud e AWS Lambda | rodar ou depurar build e render |
-| `hyperframes-registry` | Instalar e ligar blocos prontos do catálogo (`hyperframes add`) — transições shader, overlays, gráficos | quer um componente pronto em vez de animar do zero |
-| `media-use` | **Media OS**: resolve BGM, SFX, imagem, ícone, logo, voz ou LUT num arquivo local + registro no ledger; gera por TTS/música/imagem quando falta | precisa de qualquer mídia dentro do vídeo |
-
-**Workflows de criação (4 dos 10)** — o router instala os outros sob demanda
+**Core (4)** — o que a instalação padrão traz
 
 | Skill | O que faz | Quando usar |
 |---|---|---|
-| `talking-head-recut` | Empacota vídeo de rosto falando com cards de overlay **sincronizados na transcrição** — lower-third, callout de dado, citação, painel lateral, PiP. O clipe roda intacto embaixo | "põe gráficos no meu vídeo", "empacota isso" |
-| `motion-graphics` | Peça curta onde o movimento **é** a mensagem: tipografia cinética, contagem de número, hit de gráfico, logo sting, mapa animado, manchete animada. <10s, MP4 ou overlay transparente | vinheta, sting de abertura, número grande na tela |
-| `faceless-explainer` | Texto → vídeo **sem rosto e sem captura de tela**: cada visual é inventado por cena (tipografia, abstrato, diagrama, data-viz) | explicar um conceito sem aparecer na câmera |
-| `embedded-captions` | Legenda sobre vídeo falado: 35 estilos nomeados, **44 fontes empacotadas**, e o modo que põe a palavra **atrás** do sujeito (faz matting local) | legenda que um `.srt` queimado não consegue fazer |
+| `hyperframes` | **Router — leia primeiro.** Contrato de render, loop de trabalho e o que cada tipo de vídeo pede (filme de lançamento, explainer, clipe vertical, gráfico, mapa, legenda, overlay). As referências dele cobrem formato, movimento, visual, legenda, som, roteiro e storyboard | qualquer "faz/edita/anima/renderiza um vídeo" |
+| `hyperframes-cli` | O CLI por tarefa: scaffold, checagem, ver frames, editar a timeline, preview, render local ou em cloud, publicar, histórico do projeto. Lê o JSON de saída e recupera de falha de build ou render | rodar ou depurar build e render |
+| `hyperframes-registry` | **~450 blocos prontos** instalados como código editável: transições, overlays, títulos, tipografia cinética, legendas, gráficos, mapas, 3D, movimentos de câmera | antes de construir à mão qualquer efeito com nome (glitch, film grain, um gráfico) |
+| `media-use` | Busca ou gera a mídia do vídeo: música, SFX, imagem, ícone, logo, narração, avatar, vídeo gerado, transcrição, recorte, color grade — com HeyGen ou ferramentas locais grátis — e mixa o áudio | precisa de qualquer mídia, ou a filmagem ficou escura e sem vida |
+
+**Sob demanda (3)**
+
+| Skill | O que faz | Quando usar |
+|---|---|---|
+| `figma` | Traz o Figma pro vídeo: assets renderizados, tokens de marca, componentes, frames de storyboard reconstruídos como movimento, shaders | colou um link `figma.com` |
+| `slideshow` | **Apresentação ao vivo** em vez de MP4: slides, revelações em etapas, hotspots com ramificação e modo apresentador com notas (`hyperframes present`); também converte uma página existente | quer um deck, não um vídeo renderizado |
+| `remotion-to-hyperframes` | Porta vídeo feito em outra ferramenta e confere **quadro a quadro** contra o original: Remotion primeiro, também Motion Canvas, Lottie, Three.js, p5.js, canvas, ou renders de Manim, After Effects e Blender | migrar ou reaproveitar trabalho de outra ferramenta |
 
 ```bash
-npx hyperframes skills update              # o core (8)
-npx hyperframes skills update motion-graphics   # um workflow específico
+# Claude Code — plugin versionado (traz as 7; atualiza pelo /plugin)
+claude plugin marketplace add heygen-com/hyperframes
+claude plugin install hyperframes@hyperframes
+
+# Avulso, em qualquer agente — instala o core (4)
+npx hyperframes skills update
+npx hyperframes skills update slideshow   # uma das sob demanda
 ```
 
-> ⚠️ **Não use `npx skills add` sem `--skill`** num run não-interativo: ele instala as **19** de uma vez, em vez do core. O `hyperframes skills update` instala exatamente o core, e o router puxa cada workflow quando precisar.
+> ⚠️ **Não use `npx skills add` sem `--skill`** num run não-interativo: ele instala as **7** de uma vez, em vez do core.
 >
-> 🔎 **Sobre os alertas de risco no instalador:** `motion-graphics` e `talking-head-recut` aparecem como *High Risk* nos scanners. Auditando o código: o gatilho é `child_process`/`spawnSync` — elas chamam ffmpeg, Chrome e whisper — e JS minificado vendorizado (`gsap.min.js`). Rede só pra `cdn.jsdelivr.net`. Vale sua própria auditoria antes de rodar, como qualquer skill que executa com permissão de agente.
+> ⚠️ **A versão do CLI importa.** Até a **0.8.191**, o `skills update` apagava as skills instaladas que o upstream aposentou; a partir da 0.8.192 nenhum comando remove skill. Dentro de um projeto com o `hyperframes` fixado numa versão antiga, o `npx` usa a versão do projeto. Rode o update fora dele ou com `npx hyperframes@latest skills update`.
+>
+> 🗂️ **Instalou antes de 21/10/2026?** Oito skills que esta lista já trouxe foram aposentadas no upstream: `hyperframes-core`, `-animation`, `-keyframes`, `-creative`, `talking-head-recut`, `motion-graphics`, `faceless-explainer` e `embedded-captions`. O CLI atual não as remove: elas ficam na sua máquina, sem atualização. As 4 de domínio (`-core`, `-animation`, `-keyframes`, `-creative`) viraram guias dentro do router `hyperframes`; os 4 workflows foram aposentados.
 
 **Remotion ou HyperFrames?** Os dois renderizam com Chrome headless + FFmpeg. A diferença é a autoria: Remotion aposta em componentes React (precisa de bundler, handoff em JSX); HyperFrames aposta em HTML puro que humano e agente escrevem igual, e um `index.html` já roda no navegador sem build. Pra pipeline dirigido por agente, HTML costuma ganhar. Na licença não tem empate: Apache-2.0 sem taxa por render, contra a licença comercial da Remotion acima de ~3 pessoas.
 
@@ -709,7 +711,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [phuryn/pm-skills](https://github.com/phuryn/pm-skills) | Metodologia de produto/PM | MIT | `npx skills add phuryn/pm-skills@<skill>` |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | Fluxo de engenharia (to-spec, prototype, diagnosing-bugs, research, teach) | MIT | `npx skills add mattpocock/skills --skill <skill> -g` |
 | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Vídeo em React | Remotion (não-MIT) | `npx skills add remotion-dev/skills@<skill>` |
-| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Vídeo em HTML+CSS+GSAP | Apache-2.0 | `npx hyperframes skills update` |
+| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Vídeo em HTML (7 skills) | Apache-2.0 | `claude plugin marketplace add heygen-com/hyperframes` · ou `npx hyperframes skills update` |
 | [supabase/agent-skills](https://github.com/supabase/agent-skills) | Supabase oficial | ver repo | `npx skills add supabase/agent-skills@supabase` |
 | [cap-go/capacitor-skills](https://github.com/cap-go/capacitor-skills) | Capacitor best practices | ver repo | `npx skills add cap-go/capacitor-skills@capacitor-best-practices` |
 | [capawesome-team/skills](https://github.com/capawesome-team/skills) | Plugins Capacitor | ver repo | `npx skills add capawesome-team/skills@capacitor-plugins` |
