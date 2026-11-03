@@ -99,7 +99,7 @@ Mas **rodar em todo lugar ≠ funcionar em todo lugar** — depende do que a ski
 | **Estatística em Python** (statsmodels) | ✅ | ⚠️ | ✅ |
 | **Economia de token — instrução pura** (caveman, help, commit, review) | ✅ | ✅ | ✅ |
 | **Código enxuto** (ponytail) | ✅ | ✅ | ✅ |
-| **Economia de token — com hook/script/subagente** (compress, cavecrew, stats) | ✅ | ❌ | ⚠️ |
+| **Economia de token — com hook/script/subagente** (compress, cavecrew, stats, TokenEconomizer) | ✅ | ❌ | ⚠️ |
 | **MCP-backed** (skill-builder, sentry-fix, Notion, Canva) | ✅¹ | ⚠️¹ | ✅¹ |
 
 ✅ funciona · ❌ não roda · ⚠️ parcial/depende do ambiente · ¹ precisa do MCP/conector ligado
@@ -414,6 +414,29 @@ claude plugin marketplace add JuliusBrussee/caveman && claude plugin install cav
 
 > ⚠️ **Repare que os hooks ligam o modo sozinho.** A instalação completa adiciona um hook de `SessionStart` que ativa o nível `full` em toda sessão e todo projeto, e um de `UserPromptSubmit` que reinjeta as regras a cada turno (~1.250 tokens de *input* por turno, pela conta do próprio autor). Em sessão de respostas curtas isso fica **net-negativo** — e, pra crédito dele, o `/caveman-stats` fala isso na sua cara em vez de esconder atrás do número bruto de economia. Se você prefere opt-in, instale com `--minimal` e chame `/caveman` só quando quiser.
 
+<a id="tokeneconomizer"></a>
+🧩 **Plugin, não skill: [TokenEconomizer](https://github.com/microsoft/TokenEconomizer)** (Microsoft Research + UC Berkeley, Apache-2.0). Aprende com as sessões que o agente já rodou num repositório e corta desperdício nas seguintes. Três mecanismos, cada um com chave própria:
+
+| Mecanismo | O que faz | Padrão |
+|---|---|---|
+| Loop guard | Turno repetindo as mesmas falhas → um modelo-juiz confere se travou e manda redirecionamento. Nunca para o turno sozinho | ligado |
+| Corte de ferramentas | Tira das próximas sessões a ferramenta sem uso por várias sessões; um comando devolve | ligado |
+| Micro-skills | Aprende fatos do repo (o comando de teste que funciona, o build que roda antes) e injeta no início da sessão | desligado |
+
+O artigo mede **18,4–30,9% de custo médio menor** no SWE-Bench, em 5 combinações de agente e modelo. Claude Code (testado de 2.1.300 a 2.1.310), Codex, Copilot CLI e Pi. 🔧 Precisa de Python 3.10+.
+
+```bash
+git clone https://github.com/microsoft/TokenEconomizer.git
+claude plugin marketplace add "$PWD/TokenEconomizer"
+claude plugin install tokeneconomizer@tokeneconomizer
+```
+
+> ⚠️ **Comece com o corte em modo proposta:** integração que você só chama no fim de certas tarefas (Slack, Notion) entra na conta de "sem uso". `/tokeneconomizer:config set toolprune=propose --global` só propõe; `toolprune apply` aplica.
+>
+> ⚠️ **Windows:** os hooks rodam pelo `sh` do Git. Se `python3` no PATH for o atalho da Microsoft Store, cada hook perde ~1 s; aponte o Python real com `TE_PYTHON`.
+>
+> ⚠️ **CLI atualizado antes de instalar:** um Claude Code antigo (2.1.220) regravou o `settings.json` e apagou uma chave de hook que não conhecia. E deixe o clone no lugar: o plugin roda a partir dele.
+
 ---
 
 <a id="grp-enxuto"></a>
@@ -727,6 +750,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
 | [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) | 21 skills de QA e automação de testes | MIT | `npx skills add petrkindlmann/qa-skills <skill>` |
 | [canva-sdks/canva-skills](https://github.com/canva-sdks/canva-skills) | 7 skills oficiais da Canva | Apache-2.0 | `/plugin marketplace add canva-sdks/canva-skills` |
+| [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | Plugin que corta custo por repositório (loop guard, corte de ferramentas, micro-skills) | Apache-2.0 | clone + `claude plugin marketplace add "$PWD/TokenEconomizer"` |
 | [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
 > As licenças variam. Antes de usar comercialmente, cheque a licença no repositório de origem — em especial Remotion (não-MIT) e as integrações que exigem conta paga (fal, stripe, sentry).
