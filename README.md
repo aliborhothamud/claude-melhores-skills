@@ -1,6 +1,6 @@
 # 🧩 claude-melhores-skills
 
-**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~269 skills curadas em 22 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
+**Curadoria em português das melhores _skills_ pro [Claude](https://claude.com)** — **~273 skills curadas em 23 frentes de trabalho**: o que instalar, pra que serve e quando usar. Funciona no Claude Code, no Claude.ai (web/apps) e no Cowork (veja a [matriz de compatibilidade](#-onde-cada-skill-funciona)). Anos de "qual skill presta?" resolvidos numa lista só.
 
 > [!IMPORTANT]
 > Este repo é um **catálogo**, não um re-host. Cada skill aponta pro **repositório original do autor** — o crédito, o código e a licença são de quem criou. Você instala **direto da fonte**. Aqui mora só a curadoria (o que vale a pena e por quê).
@@ -25,6 +25,7 @@
 | 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
 | ✂️ [Código enxuto](#grp-enxuto) | 2 | o agente escrever o mínimo que resolve e dizer o que pulou |
 | 🎬 [Vídeo](#grp-video) | 17 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
+| 🖼️ [Carrossel renderizado](#grp-carrossel) | 4 | carrossel de Instagram pronto em PNG, com template da sua marca |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
@@ -515,7 +516,6 @@ npx hyperframes skills update slideshow   # uma das sob demanda
 
 ---
 
-<a id="grp-integracoes"></a>
 > 🎥 **Fora dos dois pacotes acima:**
 > | Skill | Pra que serve | Quando usar | Onde | Fonte |
 > |---|---|---|---|---|
@@ -524,6 +524,35 @@ npx hyperframes skills update slideshow   # uma das sob demanda
 
 > ⚠️ **`brag` — atenção à licença da trilha:** o código da skill é MIT, mas ela vem com **faixas de música de terceiro** (~13 MB) que **não** são cobertas por essa licença — o próprio README do projeto pede pra verificar e documentar os termos antes de publicar ou redistribuir. Se o vídeo for a público, troque por trilha própria ou confirme a licença na fonte.
 
+---
+
+<a id="grp-carrossel"></a>
+## 🖼️ Carrossel renderizado — suíte `tenfoldmarc/carousel-suite-skill`
+Tópico → copy aprovada → **PNGs 1080×1440** (Instagram 4:5) renderizados com Puppeteer num template HTML da sua marca (4 skills, por [@tenfoldmarc](https://github.com/tenfoldmarc/carousel-suite-skill)). O primeiro `/carousel` roda um setup de ~10 min: nome, @, nicho, voz, paleta, fontes, personagens e 3 slides-modelo (capa, conteúdo, CTA) que você aprova um a um. Depois disso, todo carrossel sai do mesmo template. — 🔧 **todas precisam de ambiente** (Node ≥18 + Puppeteer)
+
+| Skill | O que faz | Quando usar | Onde |
+|---|---|---|---|
+| `carousel` | A mãe: setup da marca na 1ª vez; depois tópico → copy (aprovação antes do render) → PNGs → entrega | "faz um carrossel de X pronto pra postar" | 🔧 |
+| `carousel-copy` | Só o conteúdo: JSON de 5 a 10 slides (hook, conteúdo, CTA com palavra pra comentar), com fórmulas de hook | escrever os slides sem renderizar | 🔧 |
+| `carousel-design` | Só o render: JSON de slides → PNGs pelo template aprovado | já tem o texto e quer as imagens | 🔧 |
+| `carousel-idea` | 5 a 10 pautas de carrossel pro seu nicho: hook, estrutura e palavra do CTA | "ideias de carrossel" | 🔧 |
+
+```bash
+git clone https://github.com/tenfoldmarc/carousel-suite-skill /tmp/carousel-install
+cp -r /tmp/carousel-install/carousel* ~/.claude/skills/
+```
+
+> ⚠️ **Sem licença declarada:** o autor manda instalar copiando, mas o repo não diz o que você pode fazer com o código. Use pra você; não redistribua.
+>
+> ⚠️ **Grava dentro da pasta da skill:** config, template, imagens, `node_modules` do Puppeteer e os PNGs ficam em `~/.claude/skills/carousel/`. Se essa pasta é um repo git, ponha `output/`, `assets/` e `package*.json` no `.gitignore`.
+>
+> 🪟 **Feita pro Mac:** o setup abre os slides no Preview e a entrega seleciona os arquivos no Finder pro AirDrop. Em outros sistemas, ela entrega o caminho da pasta.
+
+O texto em CAIXA ALTA e o bloco de "terminal" em cada slide dão cara de conteúdo tech. Se você só quer o texto do carrossel, pra qualquer rede, uma skill de escrita resolve sem o render.
+
+---
+
+<a id="grp-integracoes"></a>
 ## 🔌 Integrações & mídia por IA
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
@@ -750,6 +779,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
 | [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) | 21 skills de QA e automação de testes | MIT | `npx skills add petrkindlmann/qa-skills <skill>` |
 | [canva-sdks/canva-skills](https://github.com/canva-sdks/canva-skills) | 7 skills oficiais da Canva | Apache-2.0 | `/plugin marketplace add canva-sdks/canva-skills` |
+| [tenfoldmarc/carousel-suite-skill](https://github.com/tenfoldmarc/carousel-suite-skill) | Carrossel de Instagram renderizado em PNG (4) | ⚠️ sem licença declarada | clone + copiar as 4 pastas `carousel*` |
 | [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | Plugin que corta custo por repositório (loop guard, corte de ferramentas, micro-skills) | Apache-2.0 | clone + `claude plugin marketplace add "$PWD/TokenEconomizer"` |
 | [pbakaus](https://github.com/pbakaus) (impeccable) · [alchaincyf](https://github.com/alchaincyf) (huashu-design) · [op7418](https://github.com/op7418) (logo-generator) · [nidhinjs](https://github.com/nidhinjs) (prompt-master) · [mvanhorn](https://github.com/mvanhorn) (last30days) · [Hardik Pandya](https://hvpandya.com) (stop-slop) | Design, prompt, research, texto | ver cada repo | via skills.sh |
 
