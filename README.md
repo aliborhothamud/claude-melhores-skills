@@ -142,6 +142,21 @@ O pacote que mais muda a qualidade do Claude Code: força brainstorming antes de
 | `webapp-testing` | Testar web app com Playwright (black-box) | testar web app de ponta a ponta | 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
 | `sentry-react-sdk` / `sentry-fix-issues` | Setup do Sentry em React + corrigir erro de produção via MCP | instalar Sentry ou corrigir erro de produção | 🟢 / 🔧 | [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) |
 
+🧩 **Plugin, não skill: [Xcode](https://developer.apple.com/xcode/)** (Apple, no marketplace oficial da Anthropic desde 06/11/2026, [PR #6338](https://github.com/anthropics/claude-plugins-official/pull/6338)). O Claude builda, roda e testa o app iOS, dirige o simulador e o iPhone (tap, swipe, digitação), lê log de build e console, renderiza preview SwiftUI e busca na documentação da Apple, sem você abrir o Xcode. Traz o MCP do Xcode (54 ferramentas no Xcode 27.2) e 16 skills da Apple (SwiftUI, acessibilidade, App Intents, xctrace…). O código vem de dentro do próprio Xcode e atualiza com ele. 🔧 Só Claude Code, no Mac.
+
+**Quando usar:** build iOS quebrado, "roda no simulador e me mostra a tela", suíte de testes do Xcode. Serve também a apps Capacitor/React Native depois de gerar a pasta `ios/`.
+
+```bash
+sudo xcodebuild -license accept                      # se o Xcode acabou de atualizar
+claude plugin install xcode@claude-plugins-official  # no Terminal; confirme o comando xcrun mostrado
+sudo xcrun mcp-server enable                         # liga o acesso de agentes ao Xcode
+sudo xcrun mcp-server allow-folder ~/seus-projetos --always
+```
+
+> ⚠️ **O aceite é humano:** o plugin instala rodando um comando local, e o Claude Code só aceita esse comando de uma pessoa num terminal. De dentro de uma sessão ele recusa, até com `--accept-command`.
+>
+> ⚠️ **Licença do Xcode pendente quebra mais que o Xcode:** `/usr/bin/python3` e `git` passam pelo `xcrun`. Um hook que chame `python3` com `onFailure: block` trava todo comando Bash até a licença ser aceita. Use caminho completo para o Python dos hooks.
+
 ---
 
 <a id="grp-fluxo"></a>
@@ -777,6 +792,7 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Fábrica de skills (skill-builder / MCP) | ver repo | ver repo |
 | [Anthropic](https://github.com/anthropics/skills) | frontend-design, canvas-design (oficiais) | Apache 2.0 | vêm com o Claude Code |
 | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | 151 skills legais em 12 plugins (oficial) | ver repo | `/plugin marketplace add anthropics/claude-for-legal` |
+| [Xcode (Apple)](https://developer.apple.com/xcode/) | Plugin oficial: MCP do Xcode + 16 skills da Apple (build, simulador, preview SwiftUI, docs) | Apple (vem com o Xcode) | `claude plugin install xcode@claude-plugins-official` (no Terminal) |
 | [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills) | 21 skills de QA e automação de testes | MIT | `npx skills add petrkindlmann/qa-skills <skill>` |
 | [canva-sdks/canva-skills](https://github.com/canva-sdks/canva-skills) | 7 skills oficiais da Canva | Apache-2.0 | `/plugin marketplace add canva-sdks/canva-skills` |
 | [tenfoldmarc/carousel-suite-skill](https://github.com/tenfoldmarc/carousel-suite-skill) | Carrossel de Instagram renderizado em PNG (4) | ⚠️ sem licença declarada | clone + copiar as 4 pastas `carousel*` |
