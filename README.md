@@ -24,7 +24,7 @@
 | 🧠 [Produtividade de founder](#grp-produtividade) | 7 | foco, weekly review, roast de ideia, gate de reunião |
 | 🦴 [Economia de tokens](#grp-tokens) | 7 | cortar custo de output e fazer o contexto durar mais |
 | ✂️ [Código enxuto](#grp-enxuto) | 2 | o agente escrever o mínimo que resolve e dizer o que pulou |
-| 🎬 [Vídeo](#grp-video) | 17 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) |
+| 🎬 [Vídeo](#grp-video) | 18 | Reels/ads programáticos — em React (Remotion) ou em HTML (HyperFrames) — e engenharia reversa de vídeo pronto |
 | 🖼️ [Carrossel renderizado](#grp-carrossel) | 4 | carrossel de Instagram pronto em PNG, com template da sua marca |
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
@@ -462,7 +462,8 @@ A gêmea de código da `caveman`: a caveman enxuga a **prosa**, a ponytail enxug
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
-| `ponytail` | Modo **"dev sênior preguiçoso"**: a menor mudança que resolve por completo, reusa o que já existe, prefere stdlib a dependência nova e nunca corta validação nem segurança. Fecha toda resposta com **o que pulou, o que não checou e o risco** | `/ponytail [lite\|full\|ultra]`, "faz o mais simples", "tá over-engineered" | 🟢 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+| `ponytail` | Modo **"dev sênior preguiçoso"**: a menor mudança que resolve por completo, reusa o que já existe, prefere stdlib a dependência nova e nunca corta validação nem segurança. Fecha toda resposta com **o que pulou, o que não checou e o risco** | `/ponytail [lite\|full\|ultra]`, "faz o mais simples", "tá over-engineered" | 🟢 | [JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video) | Engenharia reversa de vídeo tomada por tomada + plano de remake | Apache-2.0 | `pip install "rea-video[ocr] @ git+https://github.com/JuneYaooo/rea-video"` + copiar `skills/rea-video/` |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `ponytail-debt` | Lista todo comentário `shortcut:` que a ponytail deixou pra depois: o livro-razão da dívida consciente | "o que ficou de atalho nesse repo?" | 🔧 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 
 > ⚠️ **Plugin × skill solta:** o plugin oficial instala hooks que ligam o modo em **toda** sessão e injetam as regras em todo subagente. Instalando só as skills, ela fica opt-in (`/ponytail`). Os números do README (−53% de código, −26% de custo) foram medidos com o plugin inteiro — não espere o mesmo da skill solta.
@@ -538,6 +539,17 @@ npx hyperframes skills update slideshow   # uma das sob demanda
 > | `brag` | Projeto pronto vira **vídeo de lançamento** curto e compartilhável (motor HyperFrames). Lê o código do projeto direto: não precisa de URL no ar nem screenshot | "faz um vídeo de lançamento", mostrar o que você construiu | 🔧 | [latent-spaces/brag](https://github.com/latent-spaces/brag) |
 
 > ⚠️ **`brag` — atenção à licença da trilha:** o código da skill é MIT, mas ela vem com **faixas de música de terceiro** (~13 MB) que **não** são cobertas por essa licença — o próprio README do projeto pede pra verificar e documentar os termos antes de publicar ou redistribuir. Se o vídeo for a público, troque por trilha própria ou confirme a licença na fonte.
+
+---
+
+## 🎬 Vídeo — engenharia reversa · `JuneYaooo/rea-video`
+Desmonta um vídeo pronto (Reel, TikTok, Short, anúncio) tomada por tomada e diz como foi feito, por [JuneYaooo](https://github.com/JuneYaooo/rea-video). — 🔧 **precisa de ambiente** (Python ≥ 3.10 + ffmpeg)
+
+| Skill | O que faz | Quando usar | Onde |
+|---|---|---|---|
+| `rea-video` | Classifica cada tomada (filmada, IA, 3D, animação, código, gravação de tela), mede cortes, ritmo e batida, extrai legenda e som separado (voz, música, efeitos) e escreve o plano de remake | "como esse vídeo foi feito?", "é IA?", "quero refazer esse reel" | 🔧 |
+
+Instalar: `pip install "rea-video[ocr] @ git+https://github.com/JuneYaooo/rea-video"` (com Python do Homebrew, use `pipx`) e copiar `skills/rea-video/` do repo para `~/.claude/skills/`. Baixa ~380 MB de modelos de áudio no primeiro uso. As instruções da skill vêm em chinês; o relatório sai em inglês com `--lang en`.
 
 ---
 
