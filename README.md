@@ -462,8 +462,7 @@ A gêmea de código da `caveman`: a caveman enxuga a **prosa**, a ponytail enxug
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
-| `ponytail` | Modo **"dev sênior preguiçoso"**: a menor mudança que resolve por completo, reusa o que já existe, prefere stdlib a dependência nova e nunca corta validação nem segurança. Fecha toda resposta com **o que pulou, o que não checou e o risco** | `/ponytail [lite\|full\|ultra]`, "faz o mais simples", "tá over-engineered" | 🟢 | [JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video) | Engenharia reversa de vídeo tomada por tomada + plano de remake | Apache-2.0 | `pip install "rea-video[ocr] @ git+https://github.com/JuneYaooo/rea-video"` + copiar `skills/rea-video/` |
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+| `ponytail` | Modo **"dev sênior preguiçoso"**: a menor mudança que resolve por completo, reusa o que já existe, prefere stdlib a dependência nova e nunca corta validação nem segurança. Fecha toda resposta com **o que pulou, o que não checou e o risco** | `/ponytail [lite\|full\|ultra]`, "faz o mais simples", "tá over-engineered" | 🟢 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `ponytail-debt` | Lista todo comentário `shortcut:` que a ponytail deixou pra depois: o livro-razão da dívida consciente | "o que ficou de atalho nesse repo?" | 🔧 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 
 > ⚠️ **Plugin × skill solta:** o plugin oficial instala hooks que ligam o modo em **toda** sessão e injetam as regras em todo subagente. Instalando só as skills, ela fica opt-in (`/ponytail`). Os números do README (−53% de código, −26% de custo) foram medidos com o plugin inteiro — não espere o mesmo da skill solta.
@@ -550,6 +549,12 @@ Desmonta um vídeo pronto (Reel, TikTok, Short, anúncio) tomada por tomada e di
 | `rea-video` | Classifica cada tomada (filmada, IA, 3D, animação, código, gravação de tela), mede cortes, ritmo e batida, extrai legenda e som separado (voz, música, efeitos) e escreve o plano de remake | "como esse vídeo foi feito?", "é IA?", "quero refazer esse reel" | 🔧 |
 
 Instalar: `pip install "rea-video[ocr] @ git+https://github.com/JuneYaooo/rea-video"` (com Python do Homebrew, use `pipx`) e copiar `skills/rea-video/` do repo para `~/.claude/skills/`. Baixa ~380 MB de modelos de áudio no primeiro uso. As instruções da skill vêm em chinês; o relatório sai em inglês com `--lang en`.
+
+🧩 **Plugin, não skill: [claude-video-vision](https://github.com/jordanrendric/claude-video-vision)** (jordanrendric, MIT). Faz o Claude assistir um vídeo: frames + fala transcrita com tempo (Whisper local ou Gemini). Aceita arquivo ou link do YouTube. 🔧 Só Claude Code.
+
+**Quando usar:** "assiste esse vídeo", `/watch-video <arquivo>`.
+
+**Instalar:** `/plugin marketplace add https://github.com/jordanrendric/claude-video-vision` e depois `/plugin install claude-video-vision`.
 
 ---
 
@@ -779,6 +784,8 @@ Toda skill acima é obra dos autores abaixo. Este catálogo só organiza e recom
 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | Diagrama editorial com marca, 45 tipos, HTML+SVG+PNG | MIT | `npx skills add cathrynlavery/diagram-design` |
 | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | Conceito técnico explicado como máquina isométrica | MIT | `npx skills add wheresryan22/anatomy -g` |
 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Código enxuto (ponytail, ponytail-debt) | MIT | `npx skills add DietrichGebert/ponytail --skill <skill>` *(só as skills, sem os hooks do plugin)* |
+| [JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video) | Engenharia reversa de vídeo tomada por tomada + plano de remake | Apache-2.0 | `pip install "rea-video[ocr] @ git+https://github.com/JuneYaooo/rea-video"` + copiar `skills/rea-video/` |
+| [jordanrendric/claude-video-vision](https://github.com/jordanrendric/claude-video-vision) | Plugin: o Claude assiste vídeo (frames + fala transcrita) | MIT | `/plugin marketplace add https://github.com/jordanrendric/claude-video-vision` + `/plugin install claude-video-vision` |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | 9 skills que transformam um repo em grafo de conhecimento + painel web | MIT | `/plugin marketplace add Egonex-AI/Understand-Anything` e `/plugin install understand-anything` |
 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 2 de 177: forecast com TimesFM e baseline com statsmodels | MIT *(pesos do TimesFM 2.5: Apache-2.0; os do 3.0 são não comerciais)* | `npx skills add https://github.com/K-Dense-AI/scientific-agent-skills --skill <skill>` |
 | [shadcn/improve](https://github.com/shadcn/improve) | Consultor read-only que escreve plano pra outro agente executar | MIT | `npx skills add https://github.com/shadcn/improve --skill improve` |
