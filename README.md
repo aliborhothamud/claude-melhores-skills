@@ -29,7 +29,7 @@
 | 🔌 [Integrações & mídia IA](#grp-integracoes) | 7 | fal, stripe, sentry, GSAP, agendar posts |
 | 🗂️ [Notion](#grp-notion) | 4 | trabalhar bem dentro do workspace |
 | ⚖️ [Legal & Compliance](#grp-legal) | 151 | fluxos jurídicos (suíte oficial da Anthropic) |
-| 🔍 [Auditoria & higiene](#grp-auditoria) | 8 | achar o bug antes do usuário — e manter o próprio setup enxuto |
+| 🔍 [Auditoria & higiene](#grp-auditoria) | 9 | achar o bug antes do usuário — e manter o próprio setup enxuto |
 | 🧪 [QA & testes](#grp-qa) | 21 | E2E, API, mobile, a11y, flaky, triagem de falha e teste do próprio agente de IA |
 | 🧭 [Entender codebase](#grp-entender) | 9 | transformar um repo num grafo navegável e tirar dúvida sobre ele |
 | 📈 [Dados & forecasting](#grp-dados) | 2 | forecast de série temporal com intervalo e baseline explicável |
@@ -537,6 +537,7 @@ npx hyperframes skills update slideshow   # uma das sob demanda
 > | Skill | Pra que serve | Quando usar | Onde | Fonte |
 > |---|---|---|---|---|
 > | `ui-demo` | **Grava a tela do seu app** e devolve vídeo de demo com cursor visível e ritmo natural, dirigindo o Playwright | GIF pro README, captura pro post, tutorial da interface | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| [NVIDIA/skillspector](https://github.com/NVIDIA/skillspector) | `skill-inspector` + o scanner SkillSpector | Apache-2.0 | `npx skills add NVIDIA/skillspector -g` · CLI: `uv tool install git+https://github.com/NVIDIA/skillspector.git` |
 > | `brag` | Projeto pronto vira **vídeo de lançamento** curto e compartilhável (motor HyperFrames). Lê o código do projeto direto: não precisa de URL no ar nem screenshot | "faz um vídeo de lançamento", mostrar o que você construiu | 🔧 | [latent-spaces/brag](https://github.com/latent-spaces/brag) |
 
 > ⚠️ **`brag` — atenção à licença da trilha:** o código da skill é MIT, mas ela vem com **faixas de música de terceiro** (~13 MB) que **não** são cobertas por essa licença — o próprio README do projeto pede pra verificar e documentar os termos antes de publicar ou redistribuir. Se o vídeo for a público, troque por trilha própria ou confirme a licença na fonte.
@@ -642,9 +643,9 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 <a id="grp-auditoria"></a>
 ## 🔍 Auditoria de código & higiene do setup
 
-**8 skills** pra achar o problema antes do usuário achar — e pra manter o **próprio** setup do agente enxuto. Uma de [shadcn](https://github.com/shadcn/improve) (MIT) e 7 garimpadas do [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT), um mega-harness de 300+ skills do qual vale trazer **peças**, não o conjunto inteiro.
+**9 skills** pra achar o problema antes do usuário achar — e pra manter o **próprio** setup do agente enxuto. Uma de [shadcn](https://github.com/shadcn/improve) (MIT), uma da [NVIDIA](https://github.com/NVIDIA/skillspector) (Apache-2.0) e 7 garimpadas do [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT), um mega-harness de 300+ skills do qual vale trazer **peças**, não o conjunto inteiro.
 
-> 💡 **A régua entre elas:** varrer a base e sair com plano → `improve` · "tá pronto pra subir?" → `production-audit` · "o botão não faz nada" → `click-path-audit` · "vou plugar um MCP" → `mcp-dependency-review` · revisar **um diff** → use o `/code-review` nativo, não estas.
+> 💡 **A régua entre elas:** varrer a base e sair com plano → `improve` · "tá pronto pra subir?" → `production-audit` · "o botão não faz nada" → `click-path-audit` · "vou plugar um MCP" → `mcp-dependency-review` · "essa skill é segura pra instalar?" → `skill-inspector` · revisar **um diff** → use o `/code-review` nativo, não estas.
 
 | Skill | Pra que serve | Quando usar | Onde | Fonte |
 |---|---|---|---|---|
@@ -656,6 +657,7 @@ Depois `/plugin` → Browse plugins → instale os que quiser. Mesmo plugin roda
 | `skill-stocktake` | **Inventário crítico das suas skills**: avalia qualidade, aponta sobreposição e sugere fusão ou aposentadoria. Tem modo rápido e completo. ⚙️ *precisa de `jq`* | depois de instalar muita coisa de uma vez; "quais skills eu nunca uso?" | 🔧 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `loop-design-check` | Desenha e revisa **loop de agente autônomo** contra os cinco modos de falha: girar queimando token, burlar o verificador, ou levar uma resposta errada até o fim | montar ou revisar um loop/cron/agente em background | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `mcp-dependency-review` | **Revisão estática da config de MCP** (`.mcp.json`, Cursor, VS Code, Claude) atrás de pacote com versão solta — `@latest`, sem versão, branch de git — antes de aprovar ou subir no CI. Não executa nenhum servidor | antes de plugar ou atualizar um MCP, revisar o `.mcp.json` de um repo | 🟢 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
+| `skill-inspector` | **Essa skill é segura pra instalar?** Roda o scanner SkillSpector (71 padrões em 17 categorias: prompt injection, exfiltração, MCP tool poisoning, código perigoso, CVE via OSV.dev) e depois lê o código atrás de intenção, permissão sobrando e persistência. Veredito `APPROVE` / `CAUTION` / `REJECT`. ⚙️ *precisa do CLI `skillspector` (Python 3.12+); sem ele, cai em revisão manual* | antes de instalar skill de repo desconhecido, auditar as skills que você já tem | 🔧 | [NVIDIA/skillspector](https://github.com/NVIDIA/skillspector) |
 
 > 🧹 **Sobre as duas últimas:** é raro um catálogo de skills indicar skills que **removem** skills. `config-gc` e `skill-stocktake` são a ponta de saída — se você instala muita coisa (como quem lê este repo), elas evitam que o setup vire um depósito.
 
